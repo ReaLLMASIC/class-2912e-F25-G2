@@ -13,6 +13,7 @@ flow/logs
 flow/reports
 flow/objects
 flow/tech
+flow/sim
 
 # Tar archives
 flow/*tar.gz

@@ -148,6 +148,10 @@ export VOLTAGE                               = $($(CORNER)_VOLTAGE)
 export LIB_FILES                             = $($(CORNER)_LIB_FILES) \
                                                $(ADDITIONAL_LIBS)
 
+# set standard cell verilog for simulation
+export STD_CELLS                             = $(abspath $(PLATFORM_DIR)/libs.ref/gf180mcu_fd_sc_mcu$(TRACK_OPTION)$(POWER_OPTION)/verilog/gf180mcu_fd_sc_mcu$(TRACK_OPTION)$(POWER_OPTION).v) \
+                                               $(abspath $(PLATFORM_DIR)/libs.ref/gf180mcu_fd_sc_mcu$(TRACK_OPTION)$(POWER_OPTION)/verilog/primitives.v)
+
 # IR drop estimation supply net name to be analyzed and supply voltage variable
 export PWR_NETS_VOLTAGES  ?= VDD $(VOLTAGE)
 export GND_NETS_VOLTAGES  ?= VSS 0.0

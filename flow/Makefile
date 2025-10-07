@@ -824,3 +824,63 @@ run-yosys:
 include $(UTILS_DIR)/utils.mk
 export PRIVATE_DIR ?= ../../private_tool_scripts
 -include $(PRIVATE_DIR)/private.mk
+
+# Simulation
+#-------------------------------------------------------------------------------
+# Tools
+IVERILOG 		:= iverilog
+VVP      		:= vvp
+GTKWAVE  		:= gtkwave
+
+SIM_DIR  		:= $(WORK_HOME)/sim/$(PLATFORM)/$(DESIGN_NICKNAME)/$(FLOW_VARIANT)
+SYN_NETLIST  	:= $(RESULTS_DIR)/1_synth.v
+
+RTL_VVP         := $(SIM_DIR)/rtl.vvp
+GL_VVP          := $(SIM_DIR)/gl.vvp
+RTL_VCD         ?= $(SIM_DIR)/rtl.vcd
+GL_VCD          ?= $(SIM_DIR)/gl.vcd
+
+# TODO: Make sure the verilog dir name is correct 
+VERILOG_DIR     := uart
+VERILOG_FILES   := $(DESIGN_HOME)/src/$(VERILOG_DIR)
+TOP_LEVEL_TESTBENCH := $(VERILOG_FILES)/tb/$(DESIGN_NAME)_tb.sv
+SIM_FILES       := $(shell find $(VERILOG_FILES) -type f \
+    				\( -name "*.v" -o -name "*.sv" \) ! -name "*_tb.sv")
+
+
+IVFLAGS  := -g2012 -I$(VERILOG_FILES) 
+# --------------------
+# Environment checks
+# --------------------
+envcheck:
+	@command -v $(IVERILOG) >/dev/null || { echo "[ERR] iverilog not found in PATH"; exit 1; }
+	@command -v $(YOSYS)    >/dev/null || { echo "[ERR] yosys not found in PATH"; exit 1; }
+	@mkdir -p $(SIM_DIR) $(SYN_DIR)
+	@echo "[OK] Tools present. Using LIB_SYN=$(LIB_FILES)"
+
+# --------------------
+# Behavioral Simulation
+# --------------------
+sim: envcheck
+	@echo "[RTL] Compile behavioral RTL with Icarus Verilog"
+	$(IVERILOG) $(IVFLAGS) -o $(RTL_VVP) \
+	$(SIM_FILES) $(TOP_LEVEL_TESTBENCH) \
+	-D VSIM_OUT=\"$(SIM_DIR)/rtl_sim_output.txt\" -D VCD_FILE=\"$(RTL_VCD)\"
+	$(VVP) $(RTL_VVP) -q
+
+sim_syn: synth
+	@echo "[GL] Compile gate-level with Icarus Verilog"
+	$(IVERILOG) $(IVFLAGS) -o $(GL_VVP) \
+	  $(STD_CELLS) $(SYN_NETLIST) $(TOP_LEVEL_TESTBENCH) \
+	  $(IVDEFS_GL) -D VSIM_OUT=\"$(SIM_DIR)/gl_sim_output.txt\" -D VCD_FILE=\"$(GL_VCD)\" -D POST_SYN
+	$(VVP) $(GL_VVP)
+
+# --------------------
+# View Waveforms
+# --------------------
+view_syn: sim_syn
+	@if [ -f "$(GL_VCD)" ]; then $(GTKWAVE) $(GL_VCD) & else echo "No GL VCD at $(GL_VCD)"; fi
+
+view_behavior: sim
+	@if [ -f "$(RTL_VCD)" ]; then $(GTKWAVE) $(RTL_VCD) & else echo "No RTL VCD at $(RTL_VCD)"; fi
+
