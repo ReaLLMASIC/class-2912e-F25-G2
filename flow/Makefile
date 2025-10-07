@@ -75,6 +75,9 @@
 # DESIGN_CONFIG=./designs/gf180/riscv32i/config.mk
 # DESIGN_CONFIG=./designs/gf180/uart-blocks/config.mk
 
+DESIGN_CONFIG=./designs/gf180mcuD/uart-blocks/uart_rx/config.mk
+# DESIGN_CONFIG=./designs/gf180mcuD/riscv32i/config.mk
+
 #DESIGN_CONFIG=./designs/ihp-sg13g2/aes/config.mk
 #DESIGN_CONFIG=./designs/ihp-sg13g2/ibex/config.mk
 #DESIGN_CONFIG=./designs/ihp-sg13g2/gcd/config.mk
@@ -83,7 +86,7 @@
 #DESIGN_CONFIG=./designs/ihp-sg13g2/i2c-gpio-expander/config.mk
 
 # Default design
-DESIGN_CONFIG ?= ./designs/nangate45/gcd/config.mk
+# DESIGN_CONFIG ?= ./designs/nangate45/gcd/config.mk
 export DESIGN_CONFIG
 include $(DESIGN_CONFIG)
 
@@ -463,12 +466,6 @@ $(eval $(call do-copy,3_place,2_floorplan.sdc,,.sdc))
 do-place:
 	$(UNSET_AND_MAKE) do-3_1_place_gp_skip_io do-3_2_place_iop do-3_3_place_gp do-3_4_place_resized do-3_5_place_dp do-3_place do-3_place.sdc
 
-# Custom repair_timing target after placement  
-$(eval $(call do-step,3_6_place_repair_timing,$(RESULTS_DIR)/3_5_place_dp.odb $(RESULTS_DIR)/3_place.sdc,repair_timing_post_place))  
-  
-.PHONY: place_repair_timing  
-place_repair_timing: $(RESULTS_DIR)/3_6_place_repair_timing.odb
-
 # Clean Targets
 #-------------------------------------------------------------------------------
 .PHONY: clean_place
@@ -685,10 +682,16 @@ else
 	echo "DRC not supported on this platform" > $@
 endif
 
+.PHONY: cdl
+cdl: $(RESULTS_DIR)/6_final.cdl
+
+.PHONY: cdl_concat
+cdl_concat: $(RESULTS_DIR)/6_final_concat.cdl
+
 $(RESULTS_DIR)/6_final.cdl: $(RESULTS_DIR)/6_final.v
 	($(TIME_CMD) $(OPENROAD_CMD) $(SCRIPTS_DIR)/cdl.tcl) 2>&1 | tee $(abspath $(LOG_DIR)/6_cdl.log)
 
-$(OBJECTS_DIR)/6_final_concat.cdl: $(RESULTS_DIR)/6_final.cdl $(CDL_FILE)
+$(RESULTS_DIR)/6_final_concat.cdl: $(RESULTS_DIR)/6_final.cdl $(CDL_FILES)
 	cat $^ > $@
 
 .PHONY: lvs

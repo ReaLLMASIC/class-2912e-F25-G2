@@ -139,7 +139,7 @@ if { [env_var_equals REMOVE_ABC_BUFFERS 1] } {
   remove_buffers
 } else {
   # Skip clone & split
-  set ::env(SETUP_MOVE_SEQUENCE) "unbuffer,sizeup,swap,buffer,vt_swap"
+  set ::env(SETUP_MOVE_SEQUENCE) "unbuffer,sizeup,swap,buffer"
   set ::env(SKIP_LAST_GASP) 1
   repair_timing_helper -setup
 }

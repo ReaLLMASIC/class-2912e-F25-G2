@@ -17,4 +17,7 @@ exec klayout -zz -rd design_name=$::env(DESIGN_NAME) \
   -rd seal_file=$seal_gds \
   -rd out_file=$::env(RESULTS_DIR)/6_final.$::env(STREAM_SYSTEM_EXT) \
   -rd tech_file=$::env(OBJECTS_DIR)/klayout.lyt \
-  -rm $::env(UTILS_DIR)/def2stream.py
+  -rm $::env(UTILS_DIR)/def2stream.py  
+
+  # -rd tech_file=/foss/pdks/volare/gf180mcu/versions/0fe599b2afb6708d281543108caf8310912f54af/gf180mcuD/libs.tech/klayout/tech/gf180mcu.lyt \
+

@@ -94,9 +94,16 @@ if { $::env(ABC_AREA) } {
   set abc_script $::env(SCRIPTS_DIR)/abc_speed.script
 }
 
-# Create argument list for stat
+# Create argument list of liberty files for mapping/reporting
+# Prefer ABC_LIB_FILES if provided (e.g., to exclude macro timing models),
+# otherwise fall back to LIB_FILES.
+set lib_list $::env(LIB_FILES)
+if { [env_var_exists_and_non_empty ABC_LIB_FILES] } {
+  set lib_list $::env(ABC_LIB_FILES)
+}
+
 set lib_args ""
-foreach lib $::env(LIB_FILES) {
+foreach lib $lib_list {
   append lib_args "-liberty $lib "
 }
 
