@@ -7,6 +7,7 @@ module testbench;
     reg [1:0] up_down;
     reg [7:0] start_value;
     wire [7:0] value;
+    wire [7:0] value_inv;
 
     // Instantiate DUT
     counter uut (
@@ -14,7 +15,8 @@ module testbench;
         .rst_n(rst_n),
         .up_down(up_down),
         .start_value(start_value),
-        .value(value)
+        .value(value),
+        .value_inv(value_inv)
     );
 
     // Clock: 10 ns period (100 MHz)
