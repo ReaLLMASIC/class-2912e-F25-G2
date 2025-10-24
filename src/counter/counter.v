@@ -6,7 +6,8 @@ module counter #(
     input wire rst_n,
     input wire [1:0] up_down,         // [load_start, direction]
     input wire [N-1:0] start_value,
-    output reg [N-1:0] value
+    output reg [N-1:0] value,
+    output wire [N-1:0] value_inv
 );
   
   reg load_prev;
@@ -28,4 +29,6 @@ module counter #(
       end
   end
  
+  assign value_inv = ~value;
+
 endmodule
