@@ -1,5 +1,6 @@
 module pooling #(
-    parameter SRAM_SIZE = 16
+    parameter NUM_PIXELS = 16
+    parameter SRAM_ADDR_SIZE = 9;
 ) 
 (
     input logic clk,
@@ -7,8 +8,7 @@ module pooling #(
     input logic [7:0] in_data,
     input logic mode,
     output logic [7:0] mu,
-    output logic [SRAM_SIZE-1:0] sram_sel_x, //figure out if this should be one hot encoding or not
-    output logic [SRAM_SIZE-1:0] sram_sel_y
+    output logic [SRAM_ADDR_SIZE-1:0] sram_read_addr
 
 )
 
@@ -19,6 +19,9 @@ localparam SUM_WIDTH = DATA_WIDTH + PTR_WIDTH;
 
 logic complete_rst;
 logic [7:0] weighted_data_in;
+
+logic [NUM_PIXELS-1:0] sram_sel_x;
+logic [NUM_PIXELS-1:0] sram_sel_y;
 
 //signals for rolling average
 logic [DATA_WIDTH-1:0] history [NUM_SAMPLES-1:0];
@@ -31,17 +34,17 @@ logic [7:0] max;
     always_ff @(posedge clk or negedge rst_n) begin
 
         //logic for selecting which pixel to input
-        if (sram_sel_x < SRAM_SIZE) sram_sel_x <= sram_sel_x + 1;
-        else if (sram_sel_y < SRAM_SIZE) sram_sel_y <= sram_sel_y + 1;
+        if (sram_sel_x < NUM_PIXELS) sram_sel_x <= sram_sel_x + 1;
+        else if (sram_sel_y < NUM_PIXELS) sram_sel_y <= sram_sel_y + 1;
         else begin
             sram_sel_x <= 1;
             sram_sel_y <= 1;
         end
 
         //logic for weighting input
-        if ((sram_sel_x | sram_sel_y) == 1 | (sram_sel_x | sram_sel_y) == SRAM_SIZE) weighted_data_in <= in_data >> 2;
+        if ((sram_sel_x | sram_sel_y) == 1 | (sram_sel_x | sram_sel_y) == NUM_PIXELS) weighted_data_in <= in_data >> 2;
         //need to improve this logic (divisions)
-        else if (((sram_sel_x > SRAM_SIZE/2 - SRAM_SIZE/4) | (sram_sel_x < SRAM_SIZE/2 + SRAM_SIZE/4)) & ((sram_sel_y > SRAM_SIZE/2 - SRAM_SIZE/4) | (sram_sel_y < SRAM_SIZE/2 + SRAM_SIZE/4))) weighted_data_in <= in_data << 2;
+        else if (((sram_sel_x > NUM_PIXELS/2 - NUM_PIXELS/4) | (sram_sel_x < NUM_PIXELS/2 + NUM_PIXELS/4)) & ((sram_sel_y > NUM_PIXELS/2 - NUM_PIXELS/4) | (sram_sel_y < NUM_PIXELS/2 + NUM_PIXELS/4))) weighted_data_in <= in_data << 2;
         else weighted_data_in <= in_data;
         
         if (~rst_n) begin
