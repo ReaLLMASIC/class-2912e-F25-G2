@@ -16,19 +16,8 @@ module regfile(
     // Register array: 32x32 registers, 8-bit wide
     logic [7:0] registers [31:0][31:0];
 
-    // async reset with sync release
-    reg [1:0] rst_sync;
     always @(posedge clk or posedge reset) begin
-        if (reset) begin
-            rst_sync <= 2'b11;
-        end else begin
-            rst_sync <= {1'b0, rst_sync[1]};
-        end
-    end
-
-    wire reset_signal = rst_sync[0];
-    always @(posedge clk or posedge reset_signal) begin
-        if (reset_signal) begin 
+        if (reset) begin 
             out1 <=  8'b0;
             out2 <=  8'b0;
         end else begin 
