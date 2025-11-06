@@ -7,8 +7,9 @@ module pooling #(
     input logic rst_n,
     input logic [7:0] in_data,
     input logic mode,
-    output logic [7:0] mu,
-    output logic [SRAM_ADDR_SIZE-1:0] sram_read_addr
+    input logic [NUM_PIXELS-1:0] sram_sel_x,
+    input logic [NUM_PIXELS-1:0] sram_sel_y,
+    output logic [7:0] mu
 
 )
 
@@ -20,8 +21,8 @@ localparam SUM_WIDTH = DATA_WIDTH + PTR_WIDTH;
 logic complete_rst;
 logic [7:0] weighted_data_in;
 
-logic [NUM_PIXELS-1:0] sram_sel_x;
-logic [NUM_PIXELS-1:0] sram_sel_y;
+//logic [NUM_PIXELS-1:0] sram_sel_x;
+//logic [NUM_PIXELS-1:0] sram_sel_y;
 
 //signals for rolling average
 logic [DATA_WIDTH-1:0] history [NUM_SAMPLES-1:0];
@@ -50,7 +51,6 @@ logic [7:0] max;
         if (~rst_n) begin
 
             mu <= 0;
-            complete_rst <= 0;
             sram_sel_x <= 1;
             sram_sel_y <= 1;
             weighted_data_in <= 0;
@@ -61,23 +61,6 @@ logic [7:0] max;
             wr_ptr <= 0;
             avg_sum <= 0;
             for (int i = 0; i < NUM_SAMPLES; i++) history[i] <= '0; //this might need to be removed, handled in else if logic
-
-        end
-
-        else if (~complete_rst) begin
-
-            mu <= 0;
-            complete_rst <= 1;
-            sram_sel_x <= 1;
-            sram_sel_y <= 1;
-            weighted_data_in <= 1;
-
-            sum <= 0;
-            max <= 0;
-
-            wr_ptr <= 0;
-            avg_sum <= 0;
-            for (int i = 0; i < NUM_SAMPLES; i++) history[i] <= '0;
 
         end
 
