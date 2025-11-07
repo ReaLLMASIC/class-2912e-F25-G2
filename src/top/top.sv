@@ -6,14 +6,19 @@ module top #(
     input logic rst_n_in,
     input logic pixel_mode, //select pixel or test data
     input logic req_frame, //for requesting frame data from regfile
+    input logic source_sel,
     output logic [N-1:0] frame_data_out,
 
     //compare phase signals for analog portion
     output [N-1:0] counter_value_out,
-    input logic pixel_comparator_in //assuming 0 for counter<pixel, 1 for counter>pixel
+    input logic pixel_comparator_in, //assuming 0 for counter<pixel, 1 for counter>pixel
     output [NUM_PIXELS-1:0] column_out,
     output [NUM_PIXELS-1:0] row_out,
+    output logic source_sel_out
+
 );
+
+assign source_sel_out = source_sel;
 
 //localparam NUM_PIXELS = 32;
 localparam SRAM_SIZE = 16;
@@ -202,6 +207,7 @@ always @(posedge clk or negedge rst_n) begin
 
 
     else if (current_state = COMPARISON) begin
+        //change to input is a 8 bit register cycle through all pixels and write value to memory
         //on initial entry, col_row_rst_n and counter_rst_n will be 0
         //start col_row shift registers
         col_row_rst_n <= 1; 
