@@ -4,13 +4,11 @@ module regfile(
     input clk,
     input reset,
     input [9:0] wr_addr,
-    input [9:0] rd_addr1,
-    input [9:0] rd_addr2,
+    input [9:0] rd_addr,
     input wr_enable,
     input rd_enable,
     input [7:0] in,
-    output reg [7:0] out1,
-    output reg [7:0] out2
+    output reg [7:0] out,
     );
 
     // Register array: 32x32 registers, 8-bit wide
@@ -18,20 +16,17 @@ module regfile(
 
     always @(posedge clk or posedge reset) begin
         if (reset) begin 
-            out1 <=  8'b0;
-            out2 <=  8'b0;
+            out <=  8'b0;
         end else begin 
             if (wr_enable == 1'b1) begin 
                 registers[wr_addr[9:5]][wr_addr[4:0]] <= in;
             end 
             if (rd_enable == 1'b1) begin
-                out1 <= registers[rd_addr1[9:5]][rd_addr1[4:0]];
-                out2 <= registers[rd_addr2[9:5]][rd_addr2[4:0]];
+                out <= registers[rd_addr[9:5]][rd_addr[4:0]];
             end
         end
     end
 
 
 endmodule
-
 

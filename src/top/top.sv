@@ -54,13 +54,11 @@ logic [N-1:0] readout_buffered_out;
 //regfile signals
 logic regfile_rst_n;
 logic [9:0] reg_wr_addr;
-logic [9:0] reg_rd_addr1;
-logic [9:0] reg_rd_addr2;
+logic [9:0] reg_rd_addr;
 logic reg_wr_enable;
 logic reg_rd_enable;
 logic [7:0] reg_in;
-logic [7:0] reg_out1;
-logic [7:0] reg_out2;
+logic [7:0] reg_out;
 
 //instantiate all submodules
 col_row_logic col_row_logic_inst (
@@ -109,13 +107,11 @@ regfile (
     .clk (clk),
     .reset (regfile_rst_n),
     .wr_addr (reg_wr_addr),
-    .rd_addr1 (reg_rd_addr1),
-    .rd_addr2 (reg_rd_addr2),
+    .rd_addr (reg_rd_addr),
     .wr_enable (reg_wr_enable),
     .rd_enable (reg_rd_enable),
     .in (reg_in),
-    .out1 (reg_out1),
-    .out2 (reg_out2)
+    .out (reg_out),
 );
 
 //reset release synchronizer
@@ -136,8 +132,8 @@ typedef enum logic [2:0] {
     RESET, 
     CAPTURE,
     COMPARISON,
-    DECISION,
-    REGFILE_WR
+    DECISION
+    // REGFILE_WR
 } state_type;
 
 state_type current_state, next_state;
@@ -156,6 +152,7 @@ end
 
 logic [15:0] capture_delay_count;
 logic [15:0] current_pixel_index;
+logic [15:0] reg_current_pixel_index;
 logic counter_phase; //for reseting the counter between pixels, 0 for reset, 1 for counting
 logic [TOTAL_PIXELS-1:0] sram [N-1:0];
 logic [N-1:0] previous_mu;
@@ -202,6 +199,7 @@ always @(posedge clk or negedge rst_n) begin
         else begin
             capture_delay_count <= capture_delay_count + 1;
         end
+
 
     end
 
@@ -255,9 +253,11 @@ always @(posedge clk or negedge rst_n) begin
             //will also go to REGFILE_WR if frame is requested
             if (pooling_mu > previous_mu & ~req_frame) begin
                 previous_mu <= pooling_mu;
-                next_state <= REGFILE_WR;
+                // next_state <= REGFILE_WR; ***
+                next_state <= CAPTURE;
                 pooling_rst_n <= 1'b0;
                 wr_frame <= 1'b1;
+                reg_current_pixel_index <= 0;
             end
             //if frame is not of interest, return to capture phase
             else begin
@@ -268,36 +268,35 @@ always @(posedge clk or negedge rst_n) begin
         end
     end
 
-
-    else if (current_state = REGFILE_WR) begin
-        //iterate through all pixels
-        if (current_pixel_index < NUM_PIXELS) begin
-            //if wr_frame is 1, write current pixel to regfile
-            if (wr_frame) begin
-                reg_wr_enable <= 1'b1;
-                reg_wr_addr <= current_pixel_index;
-                reg_in <= sram[current_pixel_index];
-            end
-            //if frame is requested, read pixel from regfile to output
-            if (req_frame) begin
-                reg_rd_enable <= 1'b1;
-                reg_rd_addr1 <= current_pixel_index;
-                frame_data_out <= reg_out1;
-            end
-            current_pixel_index <= current_pixel_index + 1;
-
-        end
-        else begin
-            //move on to next capture phase
-            next_state <= CAPTURE;
-            current_pixel_index <= 0;
+    //if wr_frame is 1, write current pixel to regfile
+    if (wr_frame) begin
+        if (reg_current_pixel_index < NUM_PIXELS) begin 
+            reg_wr_enable <= 1'b1;
+            reg_wr_addr <= reg_current_pixel_index;
+            reg_in <= sram[reg_current_pixel_index];
+            
+            reg_current_pixel_index <= reg_current_pixel_index + 1;
+        end else begin // reset signals once finished with frame, enable read out
+            reg_current_pixel_index <= 0;
             wr_frame <= 1'b0;
+            req_frame <= 1'b1;
             reg_wr_enable <= 1'b0;
+        end
+    end
+    //if frame is requested, read pixel from regfile to output
+    else if (req_frame) begin
+        if (reg_current_pixel_index < NUM_PIXELS) begin
+            reg_rd_enable <= 1'b1;
+            reg_rd_addr <= reg_current_pixel_index;
+            frame_data_out <= reg_out;
+
+            reg_current_pixel_index <= reg_current_pixel_index + 1;
+        end else begin // reset signals once finished with frame
+            reg_current_pixel_index <= 0;
+            req_frame <= 1'b0;
             reg_rd_enable <= 1'b0;
         end
     end
-
-
 end
 
 
