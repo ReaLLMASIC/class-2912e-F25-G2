@@ -25,7 +25,7 @@ localparam SRAM_SIZE = 16;
 localparam SRAM_ADDR_SIZE = 9;
 //localparam N = 8;
 
-localparam CAPTURE_DELAY_CYCLES = 500;
+localparam CAPTURE_DELAY_CYCLES = 3000;
 localparam TOTAL_PIXELS = NUM_PIXELS * NUM_PIXELS;
 
 //col_row_logic signals
@@ -133,7 +133,6 @@ typedef enum logic [2:0] {
     CAPTURE,
     COMPARISON,
     DECISION
-    // REGFILE_WR
 } state_type;
 
 state_type current_state, next_state;
@@ -200,6 +199,49 @@ always @(posedge clk or negedge rst_n) begin
             capture_delay_count <= capture_delay_count + 1;
         end
 
+        // if wr_frame is 1, write current pixel to regfile
+        if (wr_frame) begin
+            if (reg_current_pixel_index < NUM_PIXELS) begin 
+                reg_wr_enable <= 1'b1;
+                reg_wr_addr <= reg_current_pixel_index;
+                reg_in <= sram[reg_current_pixel_index];
+                
+                reg_current_pixel_index <= reg_current_pixel_index + 1;
+            end else begin // reset signals once finished with frame, enable read out
+                reg_current_pixel_index <= 0;
+                wr_frame <= 1'b0;
+                req_frame <= 1'b1;
+                reg_wr_enable <= 1'b0;
+            end
+        end
+        //if frame is requested, read pixel from regfile to output
+        else if (req_frame) begin
+            if (reg_current_pixel_index < NUM_PIXELS) begin
+                reg_rd_enable <= 1'b1;
+                reg_rd_addr <= reg_current_pixel_index;
+                readout_mem_in <= reg_out;
+
+                reg_current_pixel_index <= reg_current_pixel_index + 1;
+
+                // send previous value out from buffer 
+                readout_buffer_src <= 1'b0;
+                readout_buffer_en <= 1'b1;
+                if (reg_current_pixel_index > 0) begin
+                    frame_data_out <= readout_buffered_out;
+                end
+            end 
+            // readout last pixel value
+            else if (reg_current_pixel_index = NUM_PIXELS) begin 
+                readout_buffer_src <= 1'b0;
+                readout_buffer_en <= 1'b1;
+                frame_data_out <= readout_buffered_out; 
+            end else begin // reset signals once finished with frame
+                readout_buffer_en <= 1'b0;
+                reg_current_pixel_index <= 0;
+                req_frame <= 1'b0;
+                reg_rd_enable <= 1'b0;
+            end
+        end
 
     end
 
@@ -268,35 +310,6 @@ always @(posedge clk or negedge rst_n) begin
         end
     end
 
-    //if wr_frame is 1, write current pixel to regfile
-    if (wr_frame) begin
-        if (reg_current_pixel_index < NUM_PIXELS) begin 
-            reg_wr_enable <= 1'b1;
-            reg_wr_addr <= reg_current_pixel_index;
-            reg_in <= sram[reg_current_pixel_index];
-            
-            reg_current_pixel_index <= reg_current_pixel_index + 1;
-        end else begin // reset signals once finished with frame, enable read out
-            reg_current_pixel_index <= 0;
-            wr_frame <= 1'b0;
-            req_frame <= 1'b1;
-            reg_wr_enable <= 1'b0;
-        end
-    end
-    //if frame is requested, read pixel from regfile to output
-    else if (req_frame) begin
-        if (reg_current_pixel_index < NUM_PIXELS) begin
-            reg_rd_enable <= 1'b1;
-            reg_rd_addr <= reg_current_pixel_index;
-            frame_data_out <= reg_out;
-
-            reg_current_pixel_index <= reg_current_pixel_index + 1;
-        end else begin // reset signals once finished with frame
-            reg_current_pixel_index <= 0;
-            req_frame <= 1'b0;
-            reg_rd_enable <= 1'b0;
-        end
-    end
 end
 
 
