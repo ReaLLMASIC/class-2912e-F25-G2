@@ -1,6 +1,6 @@
 module pooling #(
-    parameter NUM_PIXELS = 16
-    parameter SRAM_ADDR_SIZE = 9;
+    parameter NUM_PIXELS,
+    parameter SRAM_SIZE
 ) 
 (
     input logic clk,
@@ -11,7 +11,7 @@ module pooling #(
     input logic [NUM_PIXELS-1:0] sram_sel_y,
     output logic [7:0] mu
 
-)
+);
 
 localparam DATA_WIDTH = 8;
 localparam NUM_SAMPLES = 64;
@@ -34,13 +34,13 @@ logic [7:0] max;
 
     always_ff @(posedge clk or negedge rst_n) begin
 
-        //logic for selecting which pixel to input
-        if (sram_sel_x < NUM_PIXELS) sram_sel_x <= sram_sel_x + 1;
-        else if (sram_sel_y < NUM_PIXELS) sram_sel_y <= sram_sel_y + 1;
-        else begin
-            sram_sel_x <= 1;
-            sram_sel_y <= 1;
-        end
+        // // logic for selecting which pixel to input
+        // if (sram_sel_x < NUM_PIXELS) sram_sel_x <= sram_sel_x + 1;
+        // else if (sram_sel_y < NUM_PIXELS) sram_sel_y <= sram_sel_y + 1;
+        // else begin
+        //     sram_sel_x <= 1;
+        //     sram_sel_y <= 1;
+        // end
 
         //logic for weighting input
         if ((sram_sel_x | sram_sel_y) == 1 | (sram_sel_x | sram_sel_y) == NUM_PIXELS) weighted_data_in <= in_data >> 2;
@@ -51,11 +51,11 @@ logic [7:0] max;
         if (~rst_n) begin
 
             mu <= 0;
-            sram_sel_x <= 1;
-            sram_sel_y <= 1;
+            // sram_sel_x <= 1;
+            // sram_sel_y <= 1;
             weighted_data_in <= 0;
 
-            sum <= 0;
+            // sum <= 0;
             max <= 0;
 
             wr_ptr <= 0;

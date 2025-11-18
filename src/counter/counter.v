@@ -15,7 +15,7 @@ module counter #(
       if (!rst_n) begin
           value <= start_value;
       end else begin
-          if (up_down[0])
+          if (up_down)
               value <= value + 1'b1;
           else
               value <= value - 1'b1;

@@ -8,7 +8,7 @@ module regfile(
     input wr_enable,
     input rd_enable,
     input [7:0] in,
-    output reg [7:0] out,
+    output reg [7:0] out
     );
 
     // Register array: 32x32 registers, 8-bit wide

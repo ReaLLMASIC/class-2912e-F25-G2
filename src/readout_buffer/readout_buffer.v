@@ -24,7 +24,7 @@ module readout_buffer #(
 
     // Asynchronous reset + synchronous update
     always @(negedge rst_n or posedge clk) begin
-        if (!rst_n)
+        if (rst_n)
             out_value <= {N{1'b0}};
         else if (en)
             out_value <= selected_value;
