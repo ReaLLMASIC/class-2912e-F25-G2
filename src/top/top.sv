@@ -13,7 +13,6 @@ module top #(
     input logic [N-1:0] fpa_out,
     output logic [N-1:0] fpa_counter_signal,
     output logic comparison,
-    output logic [9:0]temp,
     output logic fpa_wr_enable,
 
     //compare phase signals for analog portion
@@ -327,7 +326,6 @@ always @(posedge clk or negedge rst_n) begin
                 pooling_rst_n <= 1'b0;
                 wr_frame <= 1'b1;
                 reg_current_pixel_index <= 0;
-                temp <= 0;
             end
             //if frame is not of interest, return to capture phase
             else begin

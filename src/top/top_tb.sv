@@ -23,7 +23,6 @@ module tb_top;
   logic [N-1:0] fpa_out;
   logic [N-1:0] fpa_counter_signal;
   logic comparison;
-  logic [9:0] temp;
   
   logic [N-1:0]               frame_mem [FRAME_SIZE-1:0];
   int index;
@@ -50,8 +49,7 @@ module tb_top;
       .fpa_counter_signal(fpa_counter_signal),
       .fpa_out(fpa_out),
       .comparison(comparison),
-      .fpa_wr_enable(fpa_wr_enable),
-      .temp(temp)
+      .fpa_wr_enable(fpa_wr_enable)
   );
 
   initial clk = 0;
@@ -82,7 +80,6 @@ module tb_top;
     // wait the 3000-cycle latency for capture
     repeat (3004) @(posedge clk);
     @(posedge clk);
-    $display("Counter data %0b == ", fpa_counter_signal);
 
     // wait 2 cycles
     repeat (2) @(posedge clk);
@@ -97,8 +94,6 @@ module tb_top;
     
     // wait 2 cycles
     repeat (2) @(posedge clk);
-    $display("Write enable %0b == ", fpa_wr_enable);    
-    $display("Addr %0b == ", temp);
     // send output to regfile over 1024 cycles
     for (int r = 0; r < NUM_PIXELS; r++) begin
       for (int c = 0; c < NUM_PIXELS; c++) begin
