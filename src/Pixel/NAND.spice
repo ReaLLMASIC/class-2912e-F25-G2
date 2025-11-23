@@ -1,0 +1,8 @@
+** sch_path: /foss/designs/pixel/NAND.sch
+.subckt NAND VDD VOUT B A GND
+*.PININFO A:B B:B GND:B VDD:B VOUT:B
+M1 VOUT B VDD VDD pfet_03v3 L=0.28u W=0.84u nf=1 m=1
+M2 VOUT A VDD VDD pfet_03v3 L=0.28u W=0.84u nf=1 m=1
+M3 VOUT B net1 GND nfet_03v3 L=0.28u W=0.42u nf=1 m=1
+M4 net1 A GND GND nfet_03v3 L=0.28u W=0.42u nf=1 m=1
+.ends

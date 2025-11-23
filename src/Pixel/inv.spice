@@ -1,0 +1,6 @@
+** sch_path: /foss/designs/pixel/inv.sch
+.subckt inv vdd vin vout vss
+*.PININFO vin:B vout:B vdd:B vss:B
+M1 vout vin vss vss nfet_03v3 L=0.28u W=0.42u nf=1 m=1
+M2 vout vin vdd vdd pfet_03v3 L=0.28u W=0.84u nf=1 m=1
+.ends

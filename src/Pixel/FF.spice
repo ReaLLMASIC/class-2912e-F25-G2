@@ -1,0 +1,42 @@
+** sch_path: /foss/designs/pixel/FF.sch
+.subckt FF_v1 RST VDD D CLK GND Q
+*.PININFO RST:B VDD:B D:B CLK:B GND:B Q:B
+x1 D net1 GND CLK VDD net3 SRlatch
+x2 net1 RST GND net2 VDD Q SRlatch
+x3 VDD CLK net2 GND inv
+.ends
+
+* expanding   symbol:  pixel/SRlatch.sym # of pins=6
+** sym_path: /foss/designs/pixel/SRlatch.sym
+** sch_path: /foss/designs/pixel/SRlatch.sch
+.subckt SRlatch D Q GND CLK VDD QB
+*.PININFO D:B CLK:B VDD:B GND:B Q:B QB:B
+x1 VDD net1 CLK D GND NAND
+x2 VDD Q QB net1 GND NAND
+x3 VDD net2 net3 CLK GND NAND
+x4 VDD QB net2 Q GND NAND
+x5 VDD D net3 GND inv
+.ends
+
+
+* expanding   symbol:  pixel/inv.sym # of pins=4
+** sym_path: /foss/designs/pixel/inv.sym
+** sch_path: /foss/designs/pixel/inv.sch
+.subckt inv vdd vin vout vss
+*.PININFO vin:B vout:B vdd:B vss:B
+M1 vout vin vss vss nfet_03v3 L=0.28u W=0.42u nf=1 m=1
+M2 vout vin vdd vdd pfet_03v3 L=0.28u W=0.84u nf=1 m=1
+.ends
+
+
+* expanding   symbol:  pixel/NAND.sym # of pins=5
+** sym_path: /foss/designs/pixel/NAND.sym
+** sch_path: /foss/designs/pixel/NAND.sch
+.subckt NAND VDD VOUT B A GND
+*.PININFO A:B B:B GND:B VDD:B VOUT:B
+M1 VOUT B VDD VDD pfet_03v3 L=0.28u W=0.84u nf=1 m=1
+M2 VOUT A VDD VDD pfet_03v3 L=0.28u W=0.84u nf=1 m=1
+M3 VOUT B net1 GND nfet_03v3 L=0.28u W=0.42u nf=1 m=1
+M4 net1 A GND GND nfet_03v3 L=0.28u W=0.42u nf=1 m=1
+.ends
+
