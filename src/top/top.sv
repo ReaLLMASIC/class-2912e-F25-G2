@@ -116,7 +116,7 @@ readout_buffer #(
 
 regfile regfile_inst(
     .clk (clk),
-    .reset (regfile_rst_n),
+    .rst_n (regfile_rst_n),
     .wr_addr (reg_wr_addr),
     .rd_addr (reg_rd_addr),
     .wr_enable (reg_wr_enable),
@@ -130,7 +130,8 @@ logic rst_n;
 reg [1:0] rst_sync;
 assign rst_n = rst_sync[0];
 
-always @(posedge clk or posedge rst_n_in) begin
+// always @(posedge clk or posedge rst_n_in) begin
+always @(posedge clk) begin
     if (~rst_n_in) begin
         rst_sync <= 2'b00;
     end
@@ -150,7 +151,7 @@ typedef enum logic [2:0] {
 state_type current_state, next_state;
 
 //state machine reset and next state progression
-always_ff @(posedge clk or negedge rst_n) begin
+always_ff @(posedge clk) begin
 
     if (~rst_n) begin
         current_state <= RESET;
@@ -170,7 +171,7 @@ logic [TOTAL_PIXELS-1:0] sram [N-1:0]; // not needed
 logic [N-1:0] previous_mu;
 logic wr_frame; //tells REGFILE_WR to write current frame to regfile
 
-always @(posedge clk or negedge rst_n) begin
+always @(posedge clk) begin
 
     if (current_state == RESET) begin
         //reset goes here
@@ -193,10 +194,6 @@ always @(posedge clk or negedge rst_n) begin
         reg_rd_enable <= 0;
         wr_frame <= 1'b0;
         fpa_wr_enable <= 0;
-
-        // for (int i = 0; i < TOTAL_PIXELS; i++) begin
-        //     sram[i] <= 0;
-        // end
     end
 
     else if (current_state == CAPTURE) begin
@@ -215,7 +212,10 @@ always @(posedge clk or negedge rst_n) begin
 
         // if wr_frame is 1, write current pixel to regfile
         if (wr_frame) begin
-            if (reg_current_pixel_index < NUM_PIXELS) begin 
+            if(~regfile_rst_n) begin
+                regfile_rst_n <= 1'b1;
+            end
+            if (reg_current_pixel_index < TOTAL_PIXELS) begin 
                 reg_wr_enable <= 1'b1;
                 
                 reg_wr_addr <= reg_current_pixel_index;
@@ -234,18 +234,22 @@ always @(posedge clk or negedge rst_n) begin
         end
         //if frame is requested, read pixel from regfile to output
         else if (req_frame) begin
-            if (reg_current_pixel_index < NUM_PIXELS) begin
+            if(~readout_buffer_rst_n) begin
+                readout_buffer_rst_n <= 1'b1;
+            end
+            if (reg_current_pixel_index < TOTAL_PIXELS) begin
                 // fpa_wr_enable <= 1'b1;
 
                 reg_rd_enable <= 1'b1;
                 reg_rd_addr <= reg_current_pixel_index;
-                readout_mem_in <= reg_out;                
+                readout_mem_in <= reg_out;       
+                       
                 // send previous value out from buffer 
                 readout_buffer_src <= 1'b0;
                 readout_buffer_en <= 1'b1;
                 if (reg_current_pixel_index > 0) begin
                     frame_data_out <= readout_buffered_out;
-                end
+                end 
                 reg_current_pixel_index <= reg_current_pixel_index + 1;
             end 
             // readout last pixel value
@@ -258,6 +262,8 @@ always @(posedge clk or negedge rst_n) begin
                 reg_current_pixel_index <= 10'b0;
                 req_frame <= 1'b0;
                 reg_rd_enable <= 1'b0;
+                regfile_rst_n <= 1'b0;
+                readout_buffer_rst_n <= 1'b0;
             end
         end
 
@@ -268,27 +274,19 @@ always @(posedge clk or negedge rst_n) begin
         //change to input is a 8 bit register cycle through all pixels and write value to memory
         //on initial entry, col_row_rst_n and counter_rst_n will be 0
         //start col_row shift registers
-        //col_row_rst_n <= 1; 
+        col_row_rst_n <= 1; 
         
-        // //if all pixels have been saved, move on to decision phase, otherwise get next pixel data
-        // if (current_pixel_index < TOTAL_PIXELS) begin
-        //     //if counter is in reset, we're starting new pixel, turn off reset
-        //     if(~counter_rst_n) begin
-        //         counter_rst_n <= 1'b1;
-        //     end
-        //     else begin
-        //         //if the counter has exceeded pixel value, write value to sram
-        //         if(pixel_comparator_in) begin
-        //             //reset counter for next pixel
-        //             counter_rst_n <= 1'b0;
-        //             fpa_counter_signal <= counter_value_out;
-        //             // FIX this should be sent to analog portion not SRAM
-        //         end
-        //     end
-
-        // end else 
-        fpa_counter_signal <= 8'b11111;
-        if (comp_delay_count >= COMP_DELAY_CYCLES) begin // currently set to 2
+        //if counter is in reset, we're starting new pixel, turn off reset
+        if(~counter_rst_n) begin
+            counter_rst_n <= 1'b1;
+        end
+        else if (comp_delay_count < COMP_DELAY_CYCLES) begin
+            //reset counter for next pixel
+            counter_rst_n <= 1'b0;
+            fpa_counter_signal <= counter_value_out;
+            comp_delay_count <= comp_delay_count + 1;
+        end
+        else begin // currently set to 2
             comparison = 0;
             next_state <= DECISION;
             col_row_rst_n <= 1'b0;
@@ -296,11 +294,7 @@ always @(posedge clk or negedge rst_n) begin
             //initialization for decision phase
             current_pixel_index <= 0;
         end
-        else begin
-            comp_delay_count <= comp_delay_count + 1;
-        end
     end
-
 
     else if (current_state == DECISION) begin
         //turn off pooling reset
@@ -319,16 +313,16 @@ always @(posedge clk or negedge rst_n) begin
             //if my was larger than previous mu, next state is REGFILE_WR to write from to regfile
             //will also go to REGFILE_WR if frame is requested
             // if (pooling_mu > previous_mu & ~req_frame) begin
+            
             if (pooling_mu > previous_mu + mu_threshold | pooling_mu < previous_mu - mu_threshold) begin
                 fpa_wr_enable <= 1'b1;
                 previous_mu <= pooling_mu;
-                // next_state <= REGFILE_WR; ***
                 next_state <= CAPTURE;
                 pooling_rst_n <= 1'b0;
                 wr_frame <= 1'b1;
                 reg_current_pixel_index <= 0;
             end
-            //if frame is not of interest, return to capture phase
+            // if frame is not of interest, return to capture phase
             else begin
                 next_state <= CAPTURE;
                 pooling_rst_n <= 1'b0;

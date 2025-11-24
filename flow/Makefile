@@ -75,7 +75,8 @@
 # DESIGN_CONFIG=./designs/gf180/riscv32i/config.mk
 # DESIGN_CONFIG=./designs/gf180/uart-blocks/config.mk
 
-DESIGN_CONFIG=./designs/gf180mcuD/uart-blocks/uart_rx/config.mk
+DESIGN_CONFIG=./designs/gf180mcuD/top/config.mk
+# DESIGN_CONFIG=./designs/gf180mcuD/uart-blocks/uart_rx/config.mk
 # DESIGN_CONFIG=./designs/gf180mcuD/riscv32i/config.mk
 
 #DESIGN_CONFIG=./designs/ihp-sg13g2/aes/config.mk
@@ -841,9 +842,13 @@ RTL_VCD         ?= $(SIM_DIR)/rtl.vcd
 GL_VCD          ?= $(SIM_DIR)/gl.vcd
 
 # TODO: Make sure the verilog dir name is correct 
-VERILOG_DIR     := uart
-VERILOG_FILES   := $(DESIGN_HOME)/src/$(VERILOG_DIR)
-TOP_LEVEL_TESTBENCH := $(VERILOG_FILES)/tb/$(DESIGN_NAME)_tb.sv
+VERILOG_DIR     := top
+# VERILOG_FILES   := $(DESIGN_HOME)/src/$(VERILOG_DIR)/*.v
+# TOP_LEVEL_TESTBENCH := $(DESIGN_HOME)/src/$(VERILOG_DIR)/tb/$(DESIGN_NAME)_tb.sv
+# VERILOG_FILES   := ../src/$(VERILOG_DIR)/*.*v
+VERILOG_FILES   := ../src/*/*.*v
+TOP_LEVEL_TESTBENCH := ../src/$(VERILOG_DIR)/tb/$(DESIGN_NAME)_tb.sv
+
 SIM_FILES       := $(shell find $(VERILOG_FILES) -type f \
     				\( -name "*.v" -o -name "*.sv" \) ! -name "*_tb.sv")
 

@@ -13,8 +13,8 @@ always @(posedge clk or negedge rst_n) begin
 
     if(~rst_n) begin
 
-        column_out <= NUM_PIXELS'b1;
-        row_out <= NUM_PIXELS'b1;
+        column_out <= {NUM_PIXELS{1'b1}};
+        row_out <= {NUM_PIXELS{1'b1}};
         col_counter <= 0;
 
     end

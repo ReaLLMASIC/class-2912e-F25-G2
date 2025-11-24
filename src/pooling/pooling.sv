@@ -1,6 +1,6 @@
 module pooling #(
-    parameter NUM_PIXELS,
-    parameter SRAM_SIZE
+    parameter NUM_PIXELS = 32,
+    parameter SRAM_SIZE = 8
 ) 
 (
     input logic clk,
@@ -26,13 +26,15 @@ logic [7:0] weighted_data_in;
 
 //signals for rolling average
 logic [DATA_WIDTH-1:0] history [NUM_SAMPLES-1:0];
+
 logic [PTR_WIDTH-1:0] wr_ptr;
 logic [SUM_WIDTH-1:0] avg_sum;
 
 //signals for max
 logic [7:0] max;
 
-    always_ff @(posedge clk or negedge rst_n) begin
+    // always_ff @(posedge clk or negedge rst_n) begin
+    always_ff @(posedge clk) begin
 
         // // logic for selecting which pixel to input
         // if (sram_sel_x < NUM_PIXELS) sram_sel_x <= sram_sel_x + 1;
@@ -61,7 +63,6 @@ logic [7:0] max;
             wr_ptr <= 0;
             avg_sum <= 0;
             for (int i = 0; i < NUM_SAMPLES; i++) history[i] <= '0; //this might need to be removed, handled in else if logic
-
         end
 
         else begin
@@ -86,7 +87,6 @@ logic [7:0] max;
             end
 
         end
-
 
     end
     

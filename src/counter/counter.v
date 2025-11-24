@@ -11,7 +11,7 @@ module counter #(
 );
   
 
-  always @(negedge rst_n or posedge clk) begin
+  always @(posedge clk) begin
       if (!rst_n) begin
           value <= start_value;
       end else begin
