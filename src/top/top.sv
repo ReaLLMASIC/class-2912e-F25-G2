@@ -28,10 +28,11 @@ assign source_sel_out = source_sel;
 //localparam NUM_PIXELS = 32;
 localparam SRAM_SIZE = 16;
 localparam SRAM_ADDR_SIZE = 9;
+localparam mu_threshold = 127;
 //localparam N = 8;
 
 localparam CAPTURE_DELAY_CYCLES = 3000;
-localparam COMP_DELAY_CYCLES = 2;
+localparam COMP_DELAY_CYCLES = 256;
 localparam TOTAL_PIXELS = NUM_PIXELS * NUM_PIXELS;
 
 //col_row_logic signals
@@ -267,7 +268,7 @@ always @(posedge clk or negedge rst_n) begin
         //change to input is a 8 bit register cycle through all pixels and write value to memory
         //on initial entry, col_row_rst_n and counter_rst_n will be 0
         //start col_row shift registers
-        col_row_rst_n <= 1; 
+        //col_row_rst_n <= 1; 
         
         // //if all pixels have been saved, move on to decision phase, otherwise get next pixel data
         // if (current_pixel_index < TOTAL_PIXELS) begin
@@ -318,7 +319,7 @@ always @(posedge clk or negedge rst_n) begin
             //if my was larger than previous mu, next state is REGFILE_WR to write from to regfile
             //will also go to REGFILE_WR if frame is requested
             // if (pooling_mu > previous_mu & ~req_frame) begin
-            if (pooling_mu > previous_mu ) begin
+            if (pooling_mu > previous_mu + mu_threshold | pooling_mu < previous_mu - mu_threshold) begin
                 fpa_wr_enable <= 1'b1;
                 previous_mu <= pooling_mu;
                 // next_state <= REGFILE_WR; ***
