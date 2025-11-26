@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module testbench;
+module readout_buffer_tb;
 
     reg clk;
     reg rst_n;

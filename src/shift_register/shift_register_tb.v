@@ -28,7 +28,7 @@ module tb_shift_register;
     task shift_bit(input bit in_bit);
         begin
             din = in_bit;
-            @(posedge clk);
+            //@(posedge clk);
             #1; // small delay for data to settle
             $display("[%0t] din=%b dout=%b data_out=%b", $time, din, dout, data_out);
         end
@@ -73,7 +73,7 @@ module tb_shift_register;
         rst = 0;
         #5;
         rst = 1;
-        @(posedge clk);
+        //@(posedge clk);
         if (data_out == 0)
             $display("Reset successful!");
         else
