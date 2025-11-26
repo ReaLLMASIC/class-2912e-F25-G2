@@ -1,5 +1,5 @@
 ** sch_path: /foss/designs/pixel/SRAM8bt.sch
-.subckt SRAM8bt wl VDD blb[7] blb[6] blb[5] blb[4] blb[3] blb[2] blb[1] blb[0] bl[7] bl[6] bl[5] bl[4] bl[3] bl[2] bl[1] bl[0] GND
+.subckt SRAM8bit wl VDD blb[7] blb[6] blb[5] blb[4] blb[3] blb[2] blb[1] blb[0] bl[7] bl[6] bl[5] bl[4] bl[3] bl[2] bl[1] bl[0] GND
 *.PININFO GND:B VDD:B wl:B blb[7:0]:B bl[7:0]:B
 x1[7] VDD wl blb[7] bl[7] GND sram
 x1[6] VDD wl blb[6] bl[6] GND sram
