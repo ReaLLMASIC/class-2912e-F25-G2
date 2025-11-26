@@ -1,0 +1,26 @@
+** sch_path: /foss/designs/pixel/SRAM8bt.sch
+.subckt SRAM8bt wl VDD blb[7] blb[6] blb[5] blb[4] blb[3] blb[2] blb[1] blb[0] bl[7] bl[6] bl[5] bl[4] bl[3] bl[2] bl[1] bl[0] GND
+*.PININFO GND:B VDD:B wl:B blb[7:0]:B bl[7:0]:B
+x1[7] VDD wl blb[7] bl[7] GND sram
+x1[6] VDD wl blb[6] bl[6] GND sram
+x1[5] VDD wl blb[5] bl[5] GND sram
+x1[4] VDD wl blb[4] bl[4] GND sram
+x1[3] VDD wl blb[3] bl[3] GND sram
+x1[2] VDD wl blb[2] bl[2] GND sram
+x1[1] VDD wl blb[1] bl[1] GND sram
+x1[0] VDD wl blb[0] bl[0] GND sram
+.ends
+
+* expanding   symbol:  pixel/sram.sym # of pins=5
+** sym_path: /foss/designs/pixel/sram.sym
+** sch_path: /foss/designs/pixel/sram.sch
+.subckt sram vdd wl blb bl gnd
+*.PININFO vdd:B wl:B bl:B blb:B gnd:B
+M3 net2 net1 gnd gnd nfet_03v3 L=0.28u W=0.84u nf=1 m=1
+M4 net2 net1 vdd vdd pfet_03v3 L=0.28u W=0.42u nf=1 m=1
+M5 net1 wl bl gnd nfet_03v3 L=0.28u W=0.42u nf=1 m=1
+M6 blb wl net2 gnd nfet_03v3 L=0.28u W=0.42u nf=1 m=1
+M7 net1 net2 gnd gnd nfet_03v3 L=0.28u W=0.84u nf=1 m=1
+M1 net1 net2 vdd vdd pfet_03v3 L=0.28u W=0.42u nf=1 m=1
+.ends
+

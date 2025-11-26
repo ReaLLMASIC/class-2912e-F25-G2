@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <report-database>
  <description>GF180 DENSITY DRC Run Report at</description>
- <original-file>/foss/designs/pixel/FF_v1.gds</original-file>
+ <original-file>/foss/designs/pixel/XOR.gds</original-file>
  <generator>drc: script='/foss/pdks/gf180mcuD/libs.tech/klayout/macros/gf180mcu_drc.lydrc'</generator>
- <top-cell>FF_v1</top-cell>
+ <top-cell>XOR</top-cell>
  <tags>
  </tags>
  <categories>
@@ -65,7 +65,7 @@
  </categories>
  <cells>
   <cell>
-   <name>FF_v1</name>
+   <name>XOR</name>
    <variant/>
    <layout-name/>
    <references>
@@ -76,1705 +76,493 @@
   <item>
    <tags/>
    <category>'PL.8'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (5.575,1.135;5.575,2.575;5.525,2.575;5.525,2.955;5.905,2.955;5.905,2.575;5.855,2.575;5.855,1.135)</value>
+    <value>polygon: (-4.995,-16.97;-4.995,-13.99;-3.995,-13.99;-3.995,-16.97)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'PL.8'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (6.375,1.135;6.375,2.575;6.325,2.575;6.325,2.955;6.705,2.955;6.705,2.575;6.655,2.575;6.655,1.135)</value>
+    <value>polygon: (-7.89,-13.385;-7.89,-12.375;-7.94,-12.375;-7.94,-11.32;-7.89,-11.32;-7.89,-9.88;-7.61,-9.88;-7.61,-11.32;-7.56,-11.32;-7.56,-12.375;-7.61,-12.375;-7.61,-13.385)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'PL.8'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (11.035,1.135;11.035,2.575;10.985,2.575;10.985,2.955;11.365,2.955;11.365,2.575;11.315,2.575;11.315,1.135)</value>
+    <value>polygon: (-5.015,-13.17;-5.015,-7.95;-4.015,-7.95;-4.015,-13.17)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'PL.8'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (11.835,1.135;11.835,2.575;11.785,2.575;11.785,2.955;12.165,2.955;12.165,2.575;12.115,2.575;12.115,1.135)</value>
+    <value>polygon: (-7.875,-9.445;-7.875,-8.005;-7.925,-8.005;-7.925,-6.95;-7.875,-6.95;-7.875,-5.94;-7.595,-5.94;-7.595,-6.95;-7.545,-6.95;-7.545,-8.005;-7.595,-8.005;-7.595,-9.445)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'PL.8'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (5.545,3.205;5.545,3.565;5.585,3.565;5.585,4.585;5.865,4.585;5.865,3.565;5.905,3.565;5.905,3.205)</value>
+    <value>polygon: (-5.035,-7.13;-5.035,-5.17;-4.035,-5.17;-4.035,-7.13)</value>
    </values>
   </item>
   <item>
    <tags/>
-   <category>'PL.8'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (6.345,3.205;6.345,3.565;6.385,3.565;6.385,4.585;6.665,4.585;6.665,3.565;6.705,3.565;6.705,3.205)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'PL.8'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (11.005,3.205;11.005,3.565;11.045,3.565;11.045,4.585;11.325,4.585;11.325,3.565;11.365,3.565;11.365,3.205)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'PL.8'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (11.805,3.205;11.805,3.565;11.845,3.565;11.845,4.585;12.125,4.585;12.125,3.565;12.165,3.565;12.165,3.205)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'PL.8'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (1.73,1.68;1.73,3.12;1.68,3.12;1.68,4.175;1.73,4.175;1.73,5.185;2.01,5.185;2.01,4.175;2.06,4.175;2.06,3.12;2.01,3.12;2.01,1.68)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'PL.8'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (5.585,5.085;5.585,6.105;5.545,6.105;5.545,6.465;5.905,6.465;5.905,6.105;5.865,6.105;5.865,5.085)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'PL.8'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (6.385,5.085;6.385,6.105;6.345,6.105;6.345,6.465;6.705,6.465;6.705,6.105;6.665,6.105;6.665,5.085)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'PL.8'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (11.045,5.085;11.045,6.105;11.005,6.105;11.005,6.465;11.365,6.465;11.365,6.105;11.325,6.105;11.325,5.085)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'PL.8'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (11.845,5.085;11.845,6.105;11.805,6.105;11.805,6.465;12.165,6.465;12.165,6.105;12.125,6.105;12.125,5.085)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'PL.8'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (5.525,6.715;5.525,7.095;5.575,7.095;5.575,8.535;5.855,8.535;5.855,7.095;5.905,7.095;5.905,6.715)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'PL.8'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (6.325,6.715;6.325,7.095;6.375,7.095;6.375,8.535;6.655,8.535;6.655,7.095;6.705,7.095;6.705,6.715)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'PL.8'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (10.985,6.715;10.985,7.095;11.035,7.095;11.035,8.535;11.315,8.535;11.315,7.095;11.365,7.095;11.365,6.715)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'PL.8'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (11.785,6.715;11.785,7.095;11.835,7.095;11.835,8.535;12.115,8.535;12.115,7.095;12.165,7.095;12.165,6.715)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'PL.8'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (5.575,8.875;5.575,10.315;5.525,10.315;5.525,10.695;5.905,10.695;5.905,10.315;5.855,10.315;5.855,8.875)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'PL.8'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (6.375,8.875;6.375,10.315;6.325,10.315;6.325,10.695;6.705,10.695;6.705,10.315;6.655,10.315;6.655,8.875)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'PL.8'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (11.035,8.875;11.035,10.315;10.985,10.315;10.985,10.695;11.365,10.695;11.365,10.315;11.315,10.315;11.315,8.875)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'PL.8'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (11.835,8.875;11.835,10.315;11.785,10.315;11.785,10.695;12.165,10.695;12.165,10.315;12.115,10.315;12.115,8.875)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'PL.8'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (1.825,7.575;1.825,9.015;1.775,9.015;1.775,10.07;1.825,10.07;1.825,11.08;2.105,11.08;2.105,10.07;2.155,10.07;2.155,9.015;2.105,9.015;2.105,7.575)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'PL.8'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (5.545,10.945;5.545,11.305;5.585,11.305;5.585,12.325;5.865,12.325;5.865,11.305;5.905,11.305;5.905,10.945)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'PL.8'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (6.345,10.945;6.345,11.305;6.385,11.305;6.385,12.325;6.665,12.325;6.665,11.305;6.705,11.305;6.705,10.945)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'PL.8'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (11.005,10.945;11.005,11.305;11.045,11.305;11.045,12.325;11.325,12.325;11.325,11.305;11.365,11.305;11.365,10.945)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'PL.8'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (11.805,10.945;11.805,11.305;11.845,11.305;11.845,12.325;12.125,12.325;12.125,11.305;12.165,11.305;12.165,10.945)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'PL.8'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (5.585,12.825;5.585,13.845;5.545,13.845;5.545,14.205;5.905,14.205;5.905,13.845;5.865,13.845;5.865,12.825)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'PL.8'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (6.385,12.825;6.385,13.845;6.345,13.845;6.345,14.205;6.705,14.205;6.705,13.845;6.665,13.845;6.665,12.825)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'PL.8'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (11.045,12.825;11.045,13.845;11.005,13.845;11.005,14.205;11.365,14.205;11.365,13.845;11.325,13.845;11.325,12.825)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'PL.8'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (11.845,12.825;11.845,13.845;11.805,13.845;11.805,14.205;12.165,14.205;12.165,13.845;12.125,13.845;12.125,12.825)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'PL.8'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (1.73,12.225;1.73,13.235;1.68,13.235;1.68,14.29;1.73,14.29;1.73,15.73;2.01,15.73;2.01,14.29;2.06,14.29;2.06,13.235;2.01,13.235;2.01,12.225)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'PL.8'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (5.525,14.455;5.525,14.835;5.575,14.835;5.575,16.275;5.855,16.275;5.855,14.835;5.905,14.835;5.905,14.455)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'PL.8'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (6.325,14.455;6.325,14.835;6.375,14.835;6.375,16.275;6.655,16.275;6.655,14.835;6.705,14.835;6.705,14.455)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'PL.8'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (10.985,14.455;10.985,14.835;11.035,14.835;11.035,16.275;11.315,16.275;11.315,14.835;11.365,14.835;11.365,14.455)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'PL.8'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (11.785,14.455;11.785,14.835;11.835,14.835;11.835,16.275;12.115,16.275;12.115,14.835;12.165,14.835;12.165,14.455)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (5.925,1.665;5.925,2.045;6.305,2.045;6.305,1.665)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (11.385,1.665;11.385,2.045;11.765,2.045;11.765,1.665)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (0.355,1.195;0.355,2.6;1.545,2.6;1.545,2.16;0.77,2.16;0.77,1.435;4.965,1.435;4.965,2.045;5.35,2.045;5.35,1.435;6.885,1.435;6.885,2.045;7.995,2.045;7.995,1.665;7.305,1.665;7.305,1.43;10.425,1.43;10.425,2.045;10.81,2.045;10.81,1.435;12.345,1.435;12.345,2.045;13.455,2.045;13.455,1.665;12.765,1.665;12.765,1.195)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (12.415,3.06;12.415,3.395;13.455,3.395;13.455,3.06)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (6.955,3.06;6.955,3.395;7.995,3.395;7.995,3.39;8.475,3.39;8.475,3.555;10.62,3.555;10.62,3.18;8.815,3.18;8.815,3.06)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (3.85,2.575;3.85,2.915;5.525,2.915;5.525,2.955;5.535,2.955;5.535,3.575;5.915,3.575;5.915,3.195;5.9,3.195;5.9,2.955;5.905,2.955;5.905,2.575)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (6.325,2.575;6.325,3.575;6.715,3.575;6.715,3.195;6.705,3.195;6.705,2.575)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (9.31,2.575;9.31,2.915;10.985,2.915;10.985,2.955;10.995,2.955;10.995,3.575;11.375,3.575;11.375,3.195;11.36,3.195;11.36,2.955;11.365,2.955;11.365,2.575)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (11.785,2.575;11.785,3.575;12.175,3.575;12.175,3.195;12.165,3.195;12.165,2.575)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (1.68,3.12;1.68,3.18;-0.325,3.18;-0.325,3.605;1.68,3.605;1.68,4.175;2.06,4.175;2.06,3.12)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (5.935,3.885;5.935,4.265;6.315,4.265;6.315,3.885)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (6.875,3.885;6.875,4.265;7.255,4.265;7.255,3.885)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (11.395,3.885;11.395,4.265;11.775,4.265;11.775,3.885)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (12.335,3.885;12.335,4.265;12.715,4.265;12.715,3.885)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (2.24,2.21;2.24,2.59;2.295,2.59;2.295,4.485;2.22,4.485;2.22,4.865;2.66,4.865;2.66,3.52;4.375,3.52;4.375,3.555;5.16,3.555;5.16,3.18;2.66,3.18;2.66,2.21)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (0.395,4.43;0.395,5.615;0.81,5.615;0.81,4.87;1.525,4.87;1.525,4.43)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (5.935,5.405;5.935,5.785;6.315,5.785;6.315,5.405)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (6.875,5.405;6.875,5.785;7.255,5.785;7.255,5.405)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (11.395,5.405;11.395,5.785;11.775,5.785;11.775,5.405)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (12.335,5.405;12.335,5.785;12.715,5.785;12.715,5.405)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (4.975,3.855;4.975,5.815;5.395,5.815;5.395,5.065;7.585,5.065;7.585,5.785;7.975,5.785;7.975,5.015;10.435,5.015;10.435,5.815;10.855,5.815;10.855,5.065;13.045,5.065;13.045,5.785;13.435,5.785;13.435,3.885;13.045,3.885;13.045,4.605;10.855,4.605;10.855,3.855;10.435,3.855;10.435,4.69;7.975,4.69;7.975,3.885;7.585,3.885;7.585,4.605;5.395,4.605;5.395,3.855)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (3.07,6.115;3.07,6.49;5.16,6.49;5.16,6.115)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (8.6,6.115;8.6,6.495;10.095,6.495;10.095,6.49;10.62,6.49;10.62,6.115)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (12.415,6.275;12.415,6.61;13.455,6.61;13.455,6.275)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (5.535,6.095;5.535,6.715;5.525,6.715;5.525,6.755;3.85,6.755;3.85,7.095;5.905,7.095;5.905,6.715;5.9,6.715;5.9,6.475;5.915,6.475;5.915,6.095)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (6.325,6.095;6.325,7.095;6.705,7.095;6.705,6.475;6.715,6.475;6.715,6.095)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (10.995,6.095;10.995,6.715;10.985,6.715;10.985,6.755;7.995,6.755;7.995,6.275;6.955,6.275;6.955,6.61;7.605,6.61;7.605,7.095;11.365,7.095;11.365,6.715;11.36,6.715;11.36,6.475;11.375,6.475;11.375,6.095)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (11.785,6.095;11.785,7.095;12.165,7.095;12.165,6.475;12.175,6.475;12.175,6.095)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (5.925,7.625;5.925,8.005;6.305,8.005;6.305,7.625)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (11.385,7.625;11.385,8.005;11.765,8.005;11.765,7.625)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (4.965,7.625;4.965,8.475;12.765,8.475;12.765,8.47;14.445,8.47;14.445,8.235;12.765,8.235;12.765,8.005;13.455,8.005;13.455,7.625;12.345,7.625;12.345,8.235;10.81,8.235;10.81,7.625;10.425,7.625;10.425,8.235;7.305,8.235;7.305,8.005;7.995,8.005;7.995,7.625;6.885,7.625;6.885,8.235;5.35,8.235;5.35,7.625)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (0.45,8.055;0.45,8.495;1.64,8.495;1.64,8.055)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (5.925,9.405;5.925,9.785;6.305,9.785;6.305,9.405)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (11.385,9.405;11.385,9.785;11.765,9.785;11.765,9.405)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (4.965,8.935;4.965,9.785;5.35,9.785;5.35,9.175;6.885,9.175;6.885,9.785;7.995,9.785;7.995,9.405;7.305,9.405;7.305,9.175;10.425,9.175;10.425,9.785;10.81,9.785;10.81,9.175;12.345,9.175;12.345,9.785;13.455,9.785;13.455,9.405;12.765,9.405;12.765,9.175;14.445,9.175;14.445,8.94;12.765,8.94;12.765,8.935)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (1.775,9.015;1.775,9.075;-0.23,9.075;-0.23,9.5;1.775,9.5;1.775,10.07;2.155,10.07;2.155,9.015)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (2.335,8.105;2.335,8.485;2.39,8.485;2.39,10.38;2.315,10.38;2.315,10.76;2.755,10.76;2.755,9.415;3.675,9.415;3.675,9.075;2.755,9.075;2.755,8.105)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (0.345,10.32;0.345,10.79;1.615,10.79;1.615,10.32)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (12.415,10.8;12.415,11.135;13.455,11.135;13.455,10.8)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (4.375,10.92;4.375,11.295;5.16,11.295;5.16,10.92)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (8.6,10.915;8.6,11.295;10.62,11.295;10.62,10.92;10.095,10.92;10.095,10.915)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (3.85,10.315;3.85,10.655;5.525,10.655;5.525,10.695;5.535,10.695;5.535,11.315;5.915,11.315;5.915,10.935;5.9,10.935;5.9,10.695;5.905,10.695;5.905,10.315)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (6.325,10.315;6.325,11.315;6.715,11.315;6.715,10.935;6.705,10.935;6.705,10.315)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (7.605,10.315;7.605,10.8;6.955,10.8;6.955,11.135;7.995,11.135;7.995,10.655;10.985,10.655;10.985,10.695;10.995,10.695;10.995,11.315;11.375,11.315;11.375,10.935;11.36,10.935;11.36,10.695;11.365,10.695;11.365,10.315)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (11.785,10.315;11.785,11.315;12.175,11.315;12.175,10.935;12.165,10.935;12.165,10.315)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (5.935,11.625;5.935,12.005;6.315,12.005;6.315,11.625)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (6.875,11.625;6.875,12.005;7.255,12.005;7.255,11.625)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (11.395,11.625;11.395,12.005;11.775,12.005;11.775,11.625)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (12.335,11.625;12.335,12.005;12.715,12.005;12.715,11.625)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M1.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (0.395,11.795;0.395,12.98;1.525,12.98;1.525,12.54;0.81,12.54;0.81,11.795)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
    <category>'M1.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (5.935,13.145;5.935,13.525;6.315,13.525;6.315,13.145)</value>
+    <value>polygon: (-4.685,-16.97;-4.685,-16.59;-4.305,-16.59;-4.305,-16.97)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M1.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (6.875,13.145;6.875,13.525;7.255,13.525;7.255,13.145)</value>
+    <value>polygon: (-3.035,-15.99;-3.035,-14.59;-2.655,-14.59;-2.655,-15.99)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M1.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (11.395,13.145;11.395,13.525;11.775,13.525;11.775,13.145)</value>
+    <value>polygon: (-9.225,-13.07;-9.225,-12.63;-8.095,-12.63;-8.095,-13.07)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M1.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (12.335,13.145;12.335,13.525;12.715,13.525;12.715,13.145)</value>
+    <value>polygon: (-3.765,-15.99;-3.765,-14.01;-3.825,-14.01;-3.825,-13.59;-3.765,-13.59;-3.765,-12.56;-3.805,-12.56;-3.805,-12.18;-3.425,-12.18;-3.425,-13.59;-2.385,-13.59;-2.385,-14.01;-3.425,-14.01;-3.425,-14.59;-3.385,-14.59;-3.385,-15.99)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M1.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (4.975,11.595;4.975,13.555;5.395,13.555;5.395,12.805;7.585,12.805;7.585,13.525;7.975,13.525;7.975,12.72;10.435,12.72;10.435,13.555;10.855,13.555;10.855,12.805;13.045,12.805;13.045,13.525;13.435,13.525;13.435,11.625;13.045,11.625;13.045,12.345;10.855,12.345;10.855,11.595;10.435,11.595;10.435,12.395;7.975,12.395;7.975,11.625;7.585,11.625;7.585,12.345;5.395,12.345;5.395,11.595)</value>
+    <value>polygon: (-3.095,-12.56;-3.095,-12.18;-2.715,-12.18;-2.715,-12.56)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M1.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (1.68,13.235;1.68,13.805;-0.325,13.805;-0.325,14.23;1.68,14.23;1.68,14.29;2.06,14.29;2.06,13.235)</value>
+    <value>polygon: (-5.605,-15.99;-5.605,-14.01;-5.635,-14.01;-5.635,-13.59;-5.605,-13.59;-5.605,-11.96;-5.225,-11.96;-5.225,-13.59;-5.22,-13.59;-5.22,-14.01;-5.225,-14.01;-5.225,-15.99)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M1.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (8.475,13.855;8.475,14.02;7.995,14.02;7.995,14.015;6.955,14.015;6.955,14.35;8.815,14.35;8.815,14.23;10.62,14.23;10.62,13.855)</value>
+    <value>polygon: (-7.94,-12.375;-7.94,-11.805;-9.945,-11.805;-9.945,-11.38;-7.94,-11.38;-7.94,-11.32;-7.56,-11.32;-7.56,-12.375)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M1.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (12.415,14.015;12.415,14.35;13.455,14.35;13.455,14.015)</value>
+    <value>polygon: (-7.4,-13.065;-7.4,-12.685;-7.325,-12.685;-7.325,-10.79;-7.38,-10.79;-7.38,-10.41;-6.96,-10.41;-6.96,-11.055;-4.705,-11.055;-4.705,-10.55;-4.325,-10.55;-4.325,-11.755;-4.705,-11.755;-4.705,-11.465;-6.235,-11.465;-6.235,-11.97;-6.96,-11.97;-6.96,-13.065)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M1.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (5.535,13.835;5.535,14.455;5.525,14.455;5.525,14.495;3.85,14.495;3.85,14.835;5.905,14.835;5.905,14.455;5.9,14.455;5.9,14.215;5.915,14.215;5.915,13.835)</value>
+    <value>polygon: (-3.055,-9.95;-3.055,-8.55;-2.675,-8.55;-2.675,-9.95)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M1.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (6.325,13.835;6.325,14.835;6.705,14.835;6.705,14.215;6.715,14.215;6.715,13.835)</value>
+    <value>polygon: (-9.25,-10.805;-9.25,-10.8;-9.265,-10.8;-9.265,-10.36;-9.25,-10.36;-9.25,-8.525;-8.06,-8.525;-8.06,-8.965;-8.77,-8.965;-8.77,-10.36;-8.075,-10.36;-8.075,-10.8;-8.77,-10.8;-8.77,-10.805)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M1.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (10.995,13.835;10.995,14.455;10.985,14.455;10.985,14.495;9.31,14.495;9.31,14.835;11.365,14.835;11.365,14.455;11.36,14.455;11.36,14.215;11.375,14.215;11.375,13.835)</value>
+    <value>polygon: (-7.925,-8.005;-7.925,-7.945;-9.93,-7.945;-9.93,-7.52;-7.925,-7.52;-7.925,-6.95;-7.545,-6.95;-7.545,-8.005)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M1.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (11.785,13.835;11.785,14.835;12.165,14.835;12.165,14.215;12.175,14.215;12.175,13.835)</value>
+    <value>polygon: (-9.21,-6.695;-9.21,-6.255;-8.08,-6.255;-8.08,-6.695)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M1.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (2.22,12.545;2.22,12.925;2.295,12.925;2.295,14.82;2.24,14.82;2.24,15.2;2.66,15.2;2.66,14.23;5.16,14.23;5.16,13.855;4.375,13.855;4.375,13.89;2.66,13.89;2.66,12.545)</value>
+    <value>polygon: (-3.785,-9.95;-3.785,-7.97;-3.845,-7.97;-3.845,-7.55;-3.785,-7.55;-3.785,-6.52;-3.825,-6.52;-3.825,-6.14;-3.445,-6.14;-3.445,-7.55;-3.43,-7.55;-3.43,-7.97;-3.445,-7.97;-3.445,-8.55;-3.405,-8.55;-3.405,-9.95)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M1.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (5.925,15.365;5.925,15.745;6.305,15.745;6.305,15.365)</value>
+    <value>polygon: (-3.15,-6.655;-3.15,-6.09;-2.72,-6.09;-2.72,-6.655)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M1.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (11.385,15.365;11.385,15.745;11.765,15.745;11.765,15.365)</value>
+    <value>polygon: (-5.625,-9.95;-5.625,-7.97;-5.655,-7.97;-5.655,-7.945;-6.945,-7.945;-6.945,-8.915;-7.365,-8.915;-7.365,-8.535;-7.31,-8.535;-7.31,-6.64;-7.385,-6.64;-7.385,-6.26;-6.945,-6.26;-6.945,-7.605;-5.655,-7.605;-5.655,-7.55;-5.625,-7.55;-5.625,-5.92;-5.245,-5.92;-5.245,-7.55;-5.24,-7.55;-5.24,-7.97;-5.245,-7.97;-5.245,-9.95)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M1.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (0.355,14.81;0.355,16.215;12.765,16.215;12.765,15.745;13.455,15.745;13.455,15.365;12.345,15.365;12.345,15.975;10.81,15.975;10.81,15.365;10.425,15.365;10.425,15.98;7.305,15.98;7.305,15.745;7.995,15.745;7.995,15.365;6.885,15.365;6.885,15.975;5.35,15.975;5.35,15.365;4.965,15.365;4.965,15.975;0.77,15.975;0.77,15.25;1.545,15.25;1.545,14.81)</value>
+    <value>polygon: (-4.725,-5.54;-4.725,-5.16;-4.345,-5.16;-4.345,-5.54)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M2.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (4.815,3.175;4.815,3.55;6.665,3.55;6.665,3.175)</value>
+    <value>polygon: (-4.73,-16.97;-4.73,-16.59;-4.305,-16.59;-4.305,-16.97)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M2.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (10.275,3.175;10.275,3.55;12.125,3.55;12.125,3.175)</value>
+    <value>polygon: (-4.155,-15.245;-4.155,-14.86;-2.655,-14.86;-2.655,-15.245)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M2.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (6.955,1.665;6.955,1.67;5.925,1.67;5.925,2.045;6.955,2.045;6.955,4.295;7.34,4.295;7.34,3.395;7.875,3.395;7.875,3.055;7.34,3.055;7.34,1.665)</value>
+    <value>polygon: (-9.925,-14.015;-9.925,-13.59;-5.22,-13.59;-5.22,-14.01;-5.225,-14.01;-5.225,-14.015)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M2.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (5.76,4.675;5.76,4.995;6.31,4.995;6.31,4.675)</value>
+    <value>polygon: (-3.825,-14.01;-3.825,-13.59;-3.82,-13.59;-3.82,-13.585;-1.895,-13.585;-1.895,-14.01)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M2.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (0.395,5.21;0.395,5.615;0.81,5.615;0.81,5.21)</value>
+    <value>polygon: (-9.22,-13.055;-9.22,-12.62;-10.725,-12.62;-10.725,-12.29;-3.155,-12.29;-3.155,-12.135;-2.695,-12.135;-2.695,-12.29;-1.28,-12.29;-1.28,-12.615;-2.695,-12.615;-2.695,-12.87;-3.155,-12.87;-3.155,-12.62;-8.775,-12.62;-8.775,-13.055)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M2.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (4.975,5.11;4.975,5.815;5.395,5.815;5.395,5.11)</value>
+    <value>polygon: (-8.03,-11.745;-8.03,-11.315;-7.56,-11.315;-7.56,-11.745)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M2.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (12.415,1.665;12.415,1.67;8.6,1.67;8.6,6.48;8.95,6.48;8.95,2.045;12.415,2.045;12.415,4.295;12.8,4.295;12.8,3.395;13.335,3.395;13.335,3.055;12.8,3.055;12.8,1.665)</value>
+    <value>polygon: (-11.035,-8.955;-11.035,-8.525;-0.385,-8.525;-0.385,-8.955)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M2.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (4.155,2.575;4.155,6.49;4.815,6.49;4.815,6.495;6.665,6.495;6.665,6.12;4.485,6.12;4.485,2.575)</value>
+    <value>polygon: (-7.005,-7.975;-7.005,-7.55;-5.24,-7.55;-5.24,-7.97;-5.245,-7.97;-5.245,-7.975)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M2.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (10.275,6.12;10.275,6.495;12.125,6.495;12.125,6.12)</value>
+    <value>polygon: (-3.845,-7.97;-3.845,-7.55;-3.84,-7.55;-3.84,-7.545;-1.915,-7.545;-1.915,-7.97)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M2.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (-0.235,3.18;-0.235,7.095;0.115,7.095;0.115,3.18)</value>
+    <value>polygon: (-9.92,-7.945;-9.92,-7.525;-9.52,-7.525;-9.52,-7.945)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M2.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (3.785,6.775;3.785,7.095;4.36,7.095;4.36,6.775)</value>
+    <value>polygon: (-9.21,-6.695;-9.21,-6.26;-8.565,-6.26;-8.565,-6.695)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M2.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (6.955,5.375;6.955,7.625;5.925,7.625;5.925,8;6.955,8;6.955,8.005;7.34,8.005;7.34,6.615;7.875,6.615;7.875,6.275;7.34,6.275;7.34,5.375)</value>
+    <value>polygon: (-3.155,-6.67;-3.155,-6.09;-2.72,-6.09;-2.72,-6.67)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M2.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (9.47,2.58;9.47,7.63;9.46,7.63;9.46,8;12.415,8;12.415,8.005;12.8,8.005;12.8,6.615;13.335,6.615;13.335,6.275;12.8,6.275;12.8,5.375;12.415,5.375;12.415,7.625;11.385,7.625;11.385,7.63;9.84,7.63;9.84,2.58)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M2.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (4.965,7.965;4.965,8.475;5.35,8.475;5.35,7.965)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M2.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (3.07,6.13;3.07,9.415;3.465,9.415;3.465,6.13)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M2.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (4.965,8.935;4.965,9.445;5.35,9.445;5.35,8.935)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M2.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (3.785,10.315;3.785,10.635;4.36,10.635;4.36,10.315)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M2.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (10.275,10.915;10.275,11.29;12.125,11.29;12.125,10.915)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M2.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (6.955,9.405;6.955,9.41;5.925,9.41;5.925,9.785;6.955,9.785;6.955,12.035;7.34,12.035;7.34,11.135;7.875,11.135;7.875,10.795;7.34,10.795;7.34,9.405)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M2.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (0.4,10.315;0.4,11.795;0.395,11.795;0.395,12.2;0.81,12.2;0.81,11.795;0.805,11.795;0.805,10.315)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M2.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (4.975,11.595;4.975,12.3;5.395,12.3;5.395,11.595)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M2.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (5.775,12.415;5.775,12.735;6.315,12.735;6.315,12.415)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M2.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (-0.235,10.315;-0.235,14.23;0.115,14.23;0.115,10.315)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M2.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (4.815,13.86;4.815,14.235;6.665,14.235;6.665,13.86)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M2.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (10.275,13.86;10.275,14.235;12.125,14.235;12.125,13.86)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M2.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (12.415,9.405;12.415,9.41;9.46,9.41;9.46,9.78;9.47,9.78;9.47,14.83;9.84,14.83;9.84,9.78;11.385,9.78;11.385,9.785;12.415,9.785;12.415,12.035;12.8,12.035;12.8,11.135;13.335,11.135;13.335,10.795;12.8,10.795;12.8,9.405)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M2.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (1.82,9.46;1.82,10.065;3.065,10.065;3.065,13.63;4.155,13.63;4.155,14.835;4.485,14.835;4.485,11.29;6.665,11.29;6.665,10.915;4.815,10.915;4.815,10.92;4.155,10.92;4.155,13.275;3.42,13.275;3.42,9.745;2.155,9.745;2.155,9.46)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M2.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (1.205,2.165;1.205,15.245;1.54,15.245;1.54,2.165)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M2.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (6.955,13.115;6.955,15.365;5.925,15.365;5.925,15.74;6.955,15.74;6.955,15.745;7.34,15.745;7.34,14.355;7.875,14.355;7.875,14.015;7.34,14.015;7.34,13.115)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M2.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (8.6,10.93;8.6,15.74;12.415,15.74;12.415,15.745;12.8,15.745;12.8,14.355;13.335,14.355;13.335,14.015;12.8,14.015;12.8,13.115;12.415,13.115;12.415,15.365;8.95,15.365;8.95,10.93)</value>
+    <value>polygon: (-7.985,-5.54;-7.985,-5.16;-4.345,-5.16;-4.345,-5.54)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M3.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (5.76,4.675;5.76,4.995;6.31,4.995;6.31,4.675)</value>
+    <value>polygon: (-4.075,-15.245;-4.075,-8.525;-3.775,-8.525;-3.775,-15.245)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M3.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (0.395,5.265;0.395,5.565;5.4,5.565;5.4,5.265)</value>
+    <value>polygon: (-2.375,-13.985;-2.375,-7.575;-1.915,-7.575;-1.915,-13.985)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M3.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (-0.235,6.755;-0.235,7.095;4.225,7.095;4.225,6.755)</value>
+    <value>polygon: (-9.925,-14.015;-9.925,-7.525;-9.5,-7.525;-9.5,-14.015)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M3.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (1.205,8.125;1.205,8.475;5.35,8.475;5.35,8.125)</value>
+    <value>polygon: (-9.18,-13.055;-9.18,-6.26;-8.795,-6.26;-8.795,-13.055)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M3.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (1.205,8.935;1.205,9.285;5.35,9.285;5.35,8.935)</value>
+    <value>polygon: (-3.155,-12.62;-3.155,-6.09;-2.695,-6.09;-2.695,-12.62)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M3.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (-0.235,10.315;-0.235,10.655;4.225,10.655;4.225,10.315)</value>
+    <value>polygon: (-7.985,-11.745;-7.985,-5.16;-7.555,-5.16;-7.555,-11.745)</value>
    </values>
   </item>
   <item>
    <tags/>
    <category>'M3.4'</category>
-   <cell>FF_v1</cell>
+   <cell>XOR</cell>
    <visited>false</visited>
    <multiplicity>1</multiplicity>
    <comment/>
    <image/>
    <values>
-    <value>polygon: (12.98,10.795;12.98,11.26;3.15,11.26;3.15,11.545;13.335,11.545;13.335,10.795)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M3.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (0.395,11.845;0.395,12.145;5.4,12.145;5.4,11.845)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M3.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (5.775,12.415;5.775,12.735;6.315,12.735;6.315,12.415)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M4.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (3.15,6.755;3.15,11.545;3.56,11.545;3.56,6.755)</value>
-   </values>
-  </item>
-  <item>
-   <tags/>
-   <category>'M4.4'</category>
-   <cell>FF_v1</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>polygon: (5.87,4.675;5.87,12.735;6.235,12.735;6.235,4.675)</value>
+    <value>polygon: (-4.72,-16.97;-4.72,-5.16;-4.355,-5.16;-4.355,-16.97)</value>
    </values>
   </item>
  </items>

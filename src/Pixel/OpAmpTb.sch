@@ -28,7 +28,6 @@ N -150 -30 0 -30 {lab=VINP}
 N 150 80 150 140 {lab=#net2}
 N 30 140 150 140 {lab=#net2}
 N -60 140 -30 140 {lab=VDD}
-C {OTA.sym} 120 10 0 0 {name=x1}
 C {capa.sym} 360 30 0 0 {name=C1
 m=1
 value=200f
@@ -62,3 +61,4 @@ C {code_shown.sym} 540 -460 0 0 {name=s1 only_toplevel=false value=" .ac dec 20 
 C {isource.sym} 0 140 3 0 {name=I0 value=100n}
 C {vdd.sym} -60 140 3 0 {name=l3 lab=VDD}
 C {vsource.sym} -390 40 0 0 {name=V2 value=800m savecurrent=false}
+C {pixel/OTA.sym} 120 10 0 0 {name=x1}
