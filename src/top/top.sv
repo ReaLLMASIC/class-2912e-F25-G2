@@ -28,7 +28,7 @@ assign source_sel_out = source_sel;
 //localparam NUM_PIXELS = 32;
 localparam SRAM_SIZE = 16;
 localparam SRAM_ADDR_SIZE = 9;
-localparam mu_threshold = 127;
+localparam mu_threshold = 10;
 //localparam N = 8;
 
 localparam CAPTURE_DELAY_CYCLES = 3000;
@@ -43,7 +43,7 @@ logic [NUM_PIXELS-1:0] row_read;
 logic pooling_rst_n;
 logic [7:0] pooling_data_in;
 logic pooling_mode;
-logic [7:0] pooling_mu;
+logic [8:0] pooling_mu;
 logic [SRAM_ADDR_SIZE-1:0] sram_read_addr;
 logic [NUM_PIXELS-1:0] sram_sel_x;
 logic [NUM_PIXELS-1:0] sram_sel_y;
@@ -167,9 +167,17 @@ logic [15:0] capture_delay_count;
 logic [15:0] current_pixel_index;
 logic [10:0] reg_current_pixel_index;
 logic counter_phase; //for reseting the counter between pixels, 0 for reset, 1 for counting
-logic [TOTAL_PIXELS-1:0] sram [N-1:0]; // not needed 
-logic [N-1:0] previous_mu;
+// logic [TOTAL_PIXELS-1:0] sram [N-1:0]; // not needed 
+logic [N:0] previous_mu;
 logic wr_frame; //tells REGFILE_WR to write current frame to regfile
+
+// pooling logic overflow signals
+logic [8:0] pmu;
+logic [8:0] prv;
+logic [8:0] thr;
+
+logic [8:0] upper;
+logic [8:0] lower;
 
 always @(posedge clk) begin
 
@@ -286,7 +294,7 @@ always @(posedge clk) begin
             fpa_counter_signal <= counter_value_out;
             comp_delay_count <= comp_delay_count + 1;
         end
-        else begin // currently set to 2
+        else begin 
             comparison = 0;
             next_state <= DECISION;
             col_row_rst_n <= 1'b0;
@@ -302,19 +310,20 @@ always @(posedge clk) begin
         //iterating through all pixels
         if (current_pixel_index < TOTAL_PIXELS) begin
             //provide current pixel value
-            // pooling_data_in <= sram[current_pixel_index];
             pooling_data_in <= fpa_out;
+            
             //provide current pixel x and y coordinates for weighting logic
             sram_sel_x <= ((current_pixel_index+1) % NUM_PIXELS) - 1;
             sram_sel_y <= ((current_pixel_index + 1) >> $clog2(NUM_PIXELS)) - 1;
             current_pixel_index <= current_pixel_index + 1;
+            
         end
         else begin
             //if my was larger than previous mu, next state is REGFILE_WR to write from to regfile
             //will also go to REGFILE_WR if frame is requested
             // if (pooling_mu > previous_mu & ~req_frame) begin
-            
-            if (pooling_mu > previous_mu + mu_threshold | pooling_mu < previous_mu - mu_threshold) begin
+            // if (((pooling_mu > previous_mu + mu_threshold) && (previous_mu < mu_threshold)) || ((pooling_mu < previous_mu - mu_threshold) && (previous_mu > mu_threshold))) begin   
+            if ((pooling_mu > previous_mu + mu_threshold) || (pooling_mu < previous_mu - mu_threshold)) begin   
                 fpa_wr_enable <= 1'b1;
                 previous_mu <= pooling_mu;
                 next_state <= CAPTURE;
