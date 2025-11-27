@@ -171,13 +171,6 @@ logic counter_phase; //for reseting the counter between pixels, 0 for reset, 1 f
 logic [N:0] previous_mu;
 logic wr_frame; //tells REGFILE_WR to write current frame to regfile
 
-// pooling logic overflow signals
-logic [8:0] pmu;
-logic [8:0] prv;
-logic [8:0] thr;
-
-logic [8:0] upper;
-logic [8:0] lower;
 
 always @(posedge clk) begin
 
@@ -322,7 +315,6 @@ always @(posedge clk) begin
             //if my was larger than previous mu, next state is REGFILE_WR to write from to regfile
             //will also go to REGFILE_WR if frame is requested
             // if (pooling_mu > previous_mu & ~req_frame) begin
-            // if (((pooling_mu > previous_mu + mu_threshold) && (previous_mu < mu_threshold)) || ((pooling_mu < previous_mu - mu_threshold) && (previous_mu > mu_threshold))) begin   
             if ((pooling_mu > previous_mu + mu_threshold) || (pooling_mu < previous_mu - mu_threshold)) begin   
                 fpa_wr_enable <= 1'b1;
                 previous_mu <= pooling_mu;
