@@ -10,7 +10,7 @@ etc/InstallerOpenROAD.sh
 # Test working directories
 flow/results
 flow/logs
-flow/reports
+#flow/reports
 flow/objects
 flow/tech
 flow/sim

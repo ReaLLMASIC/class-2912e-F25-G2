@@ -31,7 +31,7 @@ localparam SRAM_ADDR_SIZE = 9;
 localparam mu_threshold = 10;
 //localparam N = 8;
 
-localparam CAPTURE_DELAY_CYCLES = 3000;
+localparam CAPTURE_DELAY_CYCLES = 1000;
 localparam COMP_DELAY_CYCLES = 256;
 localparam TOTAL_PIXELS = NUM_PIXELS * NUM_PIXELS;
 
@@ -88,7 +88,7 @@ pooling #(
     //.mode (pooling_mode),
     .sram_sel_x (sram_sel_x),
     .sram_sel_y (sram_sel_y),
-    .mu (pooling_mu)
+    .mu_out (pooling_mu)
 );
 
 counter #(
