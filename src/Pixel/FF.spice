@@ -1,8 +1,8 @@
 ** sch_path: /foss/designs/pixel/FF.sch
-.subckt FF_v1 RST VDD D CLK GND Q
-*.PININFO RST:B VDD:B D:B CLK:B GND:B Q:B
+.subckt FF_v1 VDD Q D QB CLK GND
+*.PININFO Q:B VDD:B D:B CLK:B GND:B QB:B
 x1 D net1 GND CLK VDD net3 SRlatch
-x2 net1 RST GND net2 VDD Q SRlatch
+x2 net1 Q GND net2 VDD QB SRlatch
 x3 VDD CLK net2 GND inv
 .ends
 

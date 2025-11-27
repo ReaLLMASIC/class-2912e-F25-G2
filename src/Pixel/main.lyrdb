@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <report-database>
  <description>DRC Run Report at</description>
- <original-file>/foss/designs/pixel/SRAM8bit.gds</original-file>
+ <original-file>/foss/designs/pixel/TG.gds</original-file>
  <generator>drc: script='/foss/pdks/gf180mcuD/libs.tech/klayout/macros/gf180mcu_drc.lydrc'</generator>
- <top-cell>SRAM8bit</top-cell>
+ <top-cell>TG</top-cell>
  <tags>
  </tags>
  <categories>
@@ -3975,7 +3975,7 @@
  </categories>
  <cells>
   <cell>
-   <name>SRAM8bit</name>
+   <name>TG</name>
    <variant/>
    <layout-name/>
    <references>
@@ -3983,5 +3983,17 @@
   </cell>
  </cells>
  <items>
+  <item>
+   <tags/>
+   <category>'M1.2a'</category>
+   <cell>TG</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <comment/>
+   <image/>
+   <values>
+    <value>edge-pair: (-0.69,-0.695;-0.69,-0.565)|(-0.89,-0.68;-0.89,-0.81)</value>
+   </values>
+  </item>
  </items>
 </report-database>
