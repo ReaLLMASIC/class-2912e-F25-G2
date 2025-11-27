@@ -42,7 +42,7 @@ logic [NUM_PIXELS-1:0] row_read;
 //pooling unit signals
 logic pooling_rst_n;
 logic [7:0] pooling_data_in;
-logic pooling_mode;
+//logic pooling_mode;
 logic [8:0] pooling_mu;
 logic [SRAM_ADDR_SIZE-1:0] sram_read_addr;
 logic [NUM_PIXELS-1:0] sram_sel_x;
@@ -85,7 +85,7 @@ pooling #(
     .clk (clk),
     .rst_n (pooling_rst_n),
     .in_data (pooling_data_in),
-    .mode (pooling_mode),
+    //.mode (pooling_mode),
     .sram_sel_x (sram_sel_x),
     .sram_sel_y (sram_sel_y),
     .mu (pooling_mu)
@@ -195,7 +195,7 @@ always @(posedge clk) begin
         counter_start_value <= 0;
         counter_up_down <= 1'b1;
 
-        pooling_mode <= 1; //max mode
+        //pooling_mode <= 1; //max mode
         previous_mu <= 0;
 
         reg_wr_enable <= 0;
