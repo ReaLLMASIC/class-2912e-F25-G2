@@ -128,17 +128,17 @@ export RCX_RC_CORNER                          = $($(CORNER)_RCX_RC_CORNER)
 #----------------------------------------------------------------------------------------------------
 # standard cell section
 #----------------------------------------------------------------------------------------------------
-export BC_LIB_FILES                           = $(abspath $(PLATFORM_DIR)/libs.ref/gf180mcu_fd_sc_mcu$(TRACK_OPTION)$(POWER_OPTION)/lib/gf180mcu_fd_sc_mcu$(TRACK_OPTION)$(POWER_OPTION)__ff_n40C_5v50.lib)
+export BC_LIB_FILES                           = $(abspath $(PLATFORM_DIR)/libs.ref/gf180mcu_fd_sc_mcu$(TRACK_OPTION)$(POWER_OPTION)/lib/gf180mcu_fd_sc_mcu$(TRACK_OPTION)$(POWER_OPTION)__ff_n40C_1v98.lib)
 export BC_TEMPERATURE                         = -40c
-export BC_VOLTAGE                             = 5.5
+export BC_VOLTAGE                             = 1.98
 
-export WC_LIB_FILES                           = $(abspath $(PLATFORM_DIR)/libs.ref/gf180mcu_fd_sc_mcu$(TRACK_OPTION)$(POWER_OPTION)/lib/gf180mcu_fd_sc_mcu$(TRACK_OPTION)$(POWER_OPTION)__ss_125C_4v50.lib)
+export WC_LIB_FILES                           = $(abspath $(PLATFORM_DIR)/libs.ref/gf180mcu_fd_sc_mcu$(TRACK_OPTION)$(POWER_OPTION)/lib/gf180mcu_fd_sc_mcu$(TRACK_OPTION)$(POWER_OPTION)__ss_125C_1v62.lib)
 export WC_TEMPERATURE                         = 125c
-export WC_VOLTAGE                             = 4.5
+export WC_VOLTAGE                             = 1.62
 
-export TC_LIB_FILES                           = $(abspath $(PLATFORM_DIR)/libs.ref/gf180mcu_fd_sc_mcu$(TRACK_OPTION)$(POWER_OPTION)/lib/gf180mcu_fd_sc_mcu$(TRACK_OPTION)$(POWER_OPTION)__tt_025C_5v00.lib)
+export TC_LIB_FILES                           = $(abspath $(PLATFORM_DIR)/libs.ref/gf180mcu_fd_sc_mcu$(TRACK_OPTION)$(POWER_OPTION)/lib/gf180mcu_fd_sc_mcu$(TRACK_OPTION)$(POWER_OPTION)__tt_025C_1v80.lib)
 export TC_TEMPERATURE                         = 25c
-export TC_VOLTAGE                             = 5.0
+export TC_VOLTAGE                             = 1.80
 
 # ----------------------------------------------------------------------------------------------------
 # now, set files from user setting CORNER
