@@ -279,8 +279,8 @@ C {lab_wire.sym} 90 220 2 0 {name=p74 sig_type=std_logic lab=VN
 }
 C {iopin.sym} -240 220 2 0 {name=p76 lab=Ramp}
 C {symbols/cap_mim_2f0fF.sym} 1360 130 0 0 {name=C2
-W=1e-6
-L=1e-6
+W=10e-6
+L=10e-6
 model=cap_mim_2f0fF
 spiceprefix=X
 m=1}
@@ -293,8 +293,8 @@ C {lab_pin.sym} 1410 -620 0 0 {name=p83 sig_type=std_logic lab=VDD}
 C {iopin.sym} 1320 -420 0 0 {name=p86 lab=CLK}
 C {pixel/SRAM8bt.sym} 1740 -800 0 0 {name=x15}
 C {symbols/pfet_03v3.sym} -80 -400 1 0 {name=M4
-L=1u
-W=2u
+L=0.28u
+W=0.42u
 nf=1
 m=1
 ad="'int((nf+1)/2) * W/nf * 0.18u'"
