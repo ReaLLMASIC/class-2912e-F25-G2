@@ -1,0 +1,6 @@
+** sch_path: /foss/designs/pixel/TG.sch
+.subckt TG In SW SWB VDD GND Out
+*.PININFO In:B Out:B SW:B GND:B VDD:B SWB:B
+M1 In SW Out GND nfet_03v3 L=0.28u W=0.42u nf=1 m=1
+M2 Out SWB In VDD pfet_03v3 L=0.28u W=0.42u nf=1 m=1
+.ends

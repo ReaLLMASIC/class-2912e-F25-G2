@@ -1,0 +1,10 @@
+** sch_path: /foss/designs/pixel/sram.sch
+.subckt sram vdd wl blb bl gnd
+*.PININFO vdd:B wl:B bl:B blb:B gnd:B
+M3 net2 net1 gnd gnd nfet_03v3 L=0.28u W=0.84u nf=1 m=1
+M4 net2 net1 vdd vdd pfet_03v3 L=0.28u W=0.42u nf=1 m=1
+M5 net1 wl bl gnd nfet_03v3 L=0.28u W=0.42u nf=1 m=1
+M6 blb wl net2 gnd nfet_03v3 L=0.28u W=0.42u nf=1 m=1
+M7 net1 net2 gnd gnd nfet_03v3 L=0.28u W=0.84u nf=1 m=1
+M1 net1 net2 vdd vdd pfet_03v3 L=0.28u W=0.42u nf=1 m=1
+.ends

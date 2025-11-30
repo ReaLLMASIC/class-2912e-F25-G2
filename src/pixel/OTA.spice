@@ -1,0 +1,10 @@
+** sch_path: /foss/designs/pixel/OTA.sch
+.subckt OTA VDD VOUT VINP VINN IREF GND
+*.PININFO VINP:B VINN:B GND:B IREF:B VDD:B VOUT:B
+M2 VOUT net2 VDD VDD pfet_03v3 L=1u W=1u nf=1 m=1
+M4 net2 net2 VDD VDD pfet_03v3 L=1u W=1u nf=1 m=1
+M1 VOUT VINP net1 GND nfet_03v3 L=1u W=0.9u nf=1 m=1
+M3 net2 VINN net1 GND nfet_03v3 L=1u W=0.9u nf=1 m=1
+M8 net1 IREF GND GND nfet_03v3 L=4u W=1u nf=1 m=1
+M6 IREF IREF GND GND nfet_03v3 L=4u W=1u nf=1 m=1
+.ends
