@@ -1,0 +1,95 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO Resistor_Ladder
+  CLASS BLOCK ;
+  FOREIGN Resistor_Ladder ;
+  ORIGIN 1.050 12.755 ;
+  SIZE 100.300 BY 16.405 ;
+  PIN GND
+    ANTENNADIFFAREA 103.729500 ;
+    PORT
+      LAYER Metal1 ;
+        RECT 95.210 -0.065 98.190 3.035 ;
+    END
+  END GND
+  PIN SB<7>
+    PORT
+      LAYER Metal1 ;
+        RECT 89.755 -0.350 90.055 -0.010 ;
+    END
+  END SB<7>
+  PIN SB<6>
+    PORT
+      LAYER Metal1 ;
+        RECT 79.555 -9.095 79.855 -8.755 ;
+    END
+  END SB<6>
+  PIN SB<5>
+    PORT
+      LAYER Metal1 ;
+        RECT 69.355 -0.350 69.655 -0.010 ;
+    END
+  END SB<5>
+  PIN SB<4>
+    PORT
+      LAYER Metal1 ;
+        RECT 59.155 -9.095 59.455 -8.755 ;
+    END
+  END SB<4>
+  PIN SB<3>
+    PORT
+      LAYER Metal1 ;
+        RECT 48.955 -0.350 49.255 -0.010 ;
+    END
+  END SB<3>
+  PIN SB<2>
+    PORT
+      LAYER Metal1 ;
+        RECT 38.755 -9.095 39.055 -8.755 ;
+    END
+  END SB<2>
+  PIN SB<1>
+    PORT
+      LAYER Metal1 ;
+        RECT 28.555 -0.350 28.855 -0.010 ;
+    END
+  END SB<1>
+  PIN SB<0>
+    PORT
+      LAYER Metal1 ;
+        RECT 18.355 -9.095 18.655 -8.755 ;
+    END
+  END SB<0>
+  PIN VOUT
+    PORT
+      LAYER Metal1 ;
+        RECT 93.155 -9.095 93.455 -8.755 ;
+    END
+  END VOUT
+  OBS
+      LAYER Metal1 ;
+        RECT -0.995 3.335 99.195 3.650 ;
+        RECT -0.995 0.290 94.910 3.335 ;
+        RECT -0.995 -0.650 28.255 0.290 ;
+        RECT 29.155 -0.650 48.655 0.290 ;
+        RECT 49.555 -0.650 69.055 0.290 ;
+        RECT 69.955 -0.650 89.455 0.290 ;
+        RECT 90.355 -0.365 94.910 0.290 ;
+        RECT 98.490 -0.365 99.195 3.335 ;
+        RECT 90.355 -0.650 99.195 -0.365 ;
+        RECT -0.995 -8.455 99.195 -0.650 ;
+        RECT -0.995 -9.395 18.055 -8.455 ;
+        RECT 18.955 -9.395 38.455 -8.455 ;
+        RECT 39.355 -9.395 58.855 -8.455 ;
+        RECT 59.755 -9.395 79.255 -8.455 ;
+        RECT 80.155 -9.395 92.855 -8.455 ;
+        RECT 93.755 -9.395 99.195 -8.455 ;
+        RECT -0.995 -12.755 99.195 -9.395 ;
+      LAYER Metal2 ;
+        RECT 13.600 -10.755 94.800 1.650 ;
+  END
+END Resistor_Ladder
+END LIBRARY
+
