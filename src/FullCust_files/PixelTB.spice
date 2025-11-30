@@ -1,0 +1,65 @@
+** sch_path: /foss/designs/PixelTB.sch
+.subckt PixelTB
+
+V1 VDD GND 1.8
+I0 VDD net1 100n
+V2 VINP GND 800m
+x1 VDD vout VINP net2 net1 GND OTA
+M1 net2 vout VOUT VDD pfet_03v3 L=1u W=1u nf=1 m=1
+XC1 VOUT GND cap_mim_2f0fF c_width=1e-6 c_length=1e-6 m=1
+I1 net2 GND 5n
+M2 VOUT RST GND GND nfet_03v3 L=0.28u W=0.22u nf=1 m=1
+V4 RST GND 0
+**** begin user architecture code
+
+.include /foss/pdks/gf180mcuD/libs.tech/ngspice/design.ngspice
+.lib /foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.ngspice typical
+
+
+.include /foss/pdks/gf180mcuD/libs.tech/ngspice/design.ngspice
+.lib /foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.ngspice typical
+.lib /foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.ngspice cap_mim
+.lib /foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.ngspice res_typical
+.lib /foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.ngspice moscap_typical
+.lib /foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.ngspice mimcap_typical
+* .lib /foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.ngspice res_statistical
+
+
+.include /foss/pdks/gf180mcuD/libs.tech/ngspice/design.ngspice
+.lib /foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.ngspice typical
+
+
+
+.param Ival = 1n
+I1 2 GND DC {Ival}
+
+.control
+save all
+
+alter @v4[PULSE] = [ 0 1.8 0 1e-5 1e-5 5e-4 1e-3 0 ]
+
+.step param Ival 1n 25n 1n
+run
+tran 1e-6 2e-3
+plot v(VOUT)
+.endc
+
+
+**** end user architecture code
+.ends
+
+* expanding   symbol:  pixel/OTA.sym # of pins=6
+** sym_path: /foss/designs/pixel/OTA.sym
+** sch_path: /foss/designs/pixel/OTA.sch
+.subckt OTA VDD VOUT VINP VINN IREF GND
+*.PININFO VINP:B VINN:B GND:B IREF:B VDD:B VOUT:B
+M2 VOUT net2 VDD VDD pfet_03v3 L=1u W=1u nf=1 m=1
+M4 net2 net2 VDD VDD pfet_03v3 L=1u W=1u nf=1 m=1
+M1 VOUT VINP net1 GND nfet_03v3 L=1u W=0.9u nf=1 m=1
+M3 net2 VINN net1 GND nfet_03v3 L=1u W=0.9u nf=1 m=1
+M8 net1 IREF GND GND nfet_03v3 L=4u W=1u nf=1 m=1
+M6 IREF IREF GND GND nfet_03v3 L=4u W=1u nf=1 m=1
+.ends
+
+.GLOBAL VDD
+.GLOBAL GND
