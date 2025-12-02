@@ -12,13 +12,14 @@ module top #(
     // FPA 8 bit output, 1024 cycles to read 
     input logic [N-1:0] fpa_out,
     output logic [N-1:0] fpa_counter_signal,
+    output logic [N-1:0] fpa_counter_signal_inv,
     output logic comparison,
     output logic fpa_wr_enable,
 
     //compare phase signals for analog portion
-    output [N-1:0] counter_value_out,
     input logic pixel_comparator_in, //assuming 0 for counter<pixel, 1 for counter>pixel
-    output [NUM_PIXELS-1:0] column_out,
+    output logic [NUM_PIXELS-1:0] column_out,
+    output logic [NUM_PIXELS-1:0] column_out_inv,
     output [NUM_PIXELS-1:0] row_out,
     output logic source_sel_out
 );
@@ -51,8 +52,8 @@ logic [NUM_PIXELS-1:0] sram_sel_y;
 logic counter_rst_n;
 logic counter_up_down;
 logic [N-1:0] counter_start_value;
-//logic [N-1:0] counter_value_out; //declared in port list
-logic [N-1:0] counter_value_inv_out;
+logic [N-1:0] counter_value_out; 
+logic [N-1:0] counter_value_inv_out; 
 //readout buffer signals
 logic readout_buffer_rst_n;
 logic readout_buffer_src;
@@ -181,6 +182,9 @@ logic [8:0] lower;
 
 always @(posedge clk) begin
 
+    column_out <= column_read;
+    column_out_inv <= ~column_read;
+
     if (current_state == RESET) begin
         //reset goes here
         next_state <= CAPTURE;
@@ -292,6 +296,7 @@ always @(posedge clk) begin
             //reset counter for next pixel
             counter_rst_n <= 1'b0;
             fpa_counter_signal <= counter_value_out;
+            fpa_counter_signal_inv <= counter_value_inv_out;
             comp_delay_count <= comp_delay_count + 1;
         end
         else begin 
