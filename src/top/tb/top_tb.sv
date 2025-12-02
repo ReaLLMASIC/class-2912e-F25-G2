@@ -78,7 +78,7 @@ module tb_top;
 
     for (int i = 0; i < 5; i++) begin
       // wait the 3000-cycle latency for capture (plus extra for control)
-      repeat(3000) @(posedge clk);
+      repeat(1000) @(posedge clk);
 
       // wait for comparison phase
       repeat(358) @(posedge clk);
