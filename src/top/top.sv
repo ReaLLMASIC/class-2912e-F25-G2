@@ -14,6 +14,7 @@ module top #(
     output logic [N-1:0] fpa_counter_signal,
     output logic [N-1:0] fpa_counter_signal_inv,
     output logic comparison,
+    output logic comparison_inv,
     output logic fpa_wr_enable,
 
     //compare phase signals for analog portion
@@ -283,6 +284,7 @@ always @(posedge clk) begin
 
     else if (current_state == COMPARISON) begin
         comparison <= 1;
+        comparison_inv <= 0;
         //change to input is a 8 bit register cycle through all pixels and write value to memory
         //on initial entry, col_row_rst_n and counter_rst_n will be 0
         //start col_row shift registers
@@ -300,7 +302,8 @@ always @(posedge clk) begin
             comp_delay_count <= comp_delay_count + 1;
         end
         else begin 
-            comparison = 0;
+            comparison <= 0;
+            comparison_inv <= 1;
             next_state <= DECISION;
             col_row_rst_n <= 1'b0;
             counter_rst_n <= 1'b0;
