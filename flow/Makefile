@@ -867,6 +867,7 @@ envcheck:
 # Behavioral Simulation
 # --------------------
 sim: envcheck
+	@echo $(TOP_LEVEL_TESTBENCH)
 	@echo "[RTL] Compile behavioral RTL with Icarus Verilog"
 	$(IVERILOG) $(IVFLAGS) -o $(RTL_VVP) \
 	$(SIM_FILES) $(TOP_LEVEL_TESTBENCH) \

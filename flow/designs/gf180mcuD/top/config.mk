@@ -1,4 +1,4 @@
-export DESIGN_NICKNAME = riscv32i
+export DESIGN_NICKNAME = top
 export DESIGN_NAME = top
 export PLATFORM    = gf180mcuD
 
