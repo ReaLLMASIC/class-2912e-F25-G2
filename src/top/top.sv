@@ -22,7 +22,10 @@ module top #(
     output logic [NUM_PIXELS-1:0] column_out,
     output logic [NUM_PIXELS-1:0] column_out_inv,
     output [NUM_PIXELS-1:0] row_out,
-    output logic source_sel_out
+    output logic source_sel_out,
+
+    output logic SET,
+    output logic RST
 );
 
 assign source_sel_out = source_sel;
@@ -161,7 +164,6 @@ always_ff @(posedge clk) begin
     else begin
         current_state <= next_state;
     end
-
 end
 
 logic [15:0] comp_delay_count;
@@ -186,6 +188,8 @@ always @(posedge clk) begin
     column_out <= column_read;
     column_out_inv <= ~column_read;
 
+    SET <= pixel_mode;
+
     if (current_state == RESET) begin
         //reset goes here
         next_state <= CAPTURE;
@@ -207,6 +211,7 @@ always @(posedge clk) begin
         reg_rd_enable <= 0;
         wr_frame <= 1'b0;
         fpa_wr_enable <= 0;
+        RST <= 0;
     end
 
     else if (current_state == CAPTURE) begin
@@ -309,10 +314,15 @@ always @(posedge clk) begin
             counter_rst_n <= 1'b0;
             //initialization for decision phase
             current_pixel_index <= 0;
+            RST <= 0;
         end
     end
 
     else if (current_state == DECISION) begin
+        if (current_pixel_index == 0) begin
+            RST <= 0;
+        end
+
         //turn off pooling reset
         pooling_rst_n <= 1;
         //iterating through all pixels
